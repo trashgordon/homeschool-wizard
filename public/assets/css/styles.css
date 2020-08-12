@@ -1,0 +1,75 @@
+body, div, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  font-size: 1em;
+}
+
+.fa-percent, .fa-book, .fa-paint-brush {
+  color: red;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-between;
+  margin: 5em auto;
+}
+
+#navbar h1 {
+  font-size: 2em;
+}
+
+#header {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+span#today {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: grey;
+}
+
+.task {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 3em auto 0;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  text-align: center;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  justify-content: center;
+}
+
+.right-column :first-child {
+  font-weight: bold;
+}
+
+.right-column :nth-child(2) {
+  color: grey;
+}
+
+#btn-add-event {
+  width: 80%;
+  margin: 3em auto 0;
+}
