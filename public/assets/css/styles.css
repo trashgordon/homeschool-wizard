@@ -9,11 +9,14 @@ body, div, h1, h2, h3, h4, h5, h6, p {
   width: 100%;
   margin: 0 auto;
   height: 100vh;
-  font-size: 1em;
+  font-size: 1.25rem;
+  background: #59405c;
+  color: #FFF;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .fa-percent, .fa-book, .fa-paint-brush {
-  color: red;
+  color: #ed6663;
 }
 
 #navbar {
@@ -21,37 +24,67 @@ body, div, h1, h2, h3, h4, h5, h6, p {
   flex-direction: row;
   width: 80%;
   justify-content: space-between;
-  margin: 5em auto;
+  color: white;
+  margin: 3vh auto;
+  font-family: 'Asap', sans-serif;
+  
 }
 
 #navbar h1 {
-  font-size: 2em;
+  font-size: 1.5em;
+  color: white;
 }
 
 #header {
   width: 80%;
   text-align: center;
   margin: 0 auto;
+  font-size: 1rem;
+  color: #d9d9d9;
 }
 
 span#today {
   text-transform: uppercase;
-  font-weight: bold;
-  color: grey;
+  font-size: 1.25rem;
 }
 
 .task {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   width: 80%;
-  margin: 3em auto 0;
+  margin: 3vh auto 0;
+  padding: 1vh;
+  line-height: 1.25rem;
+}
+
+#task-1 {
+  background: #FD6277;
+}
+
+#task-2 {
+  background: #1FDBAA;
+}
+
+#task-3 {
+  background: #1ECEDD;
+}
+
+.right-column p {
+  padding: 0.5vh 0;
 }
 
 .left-column {
   display: flex;
   flex-direction: column;
   width: 35%;
-  text-align: center;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.left-column p {
+  padding: 0.5vh 0 0 1vh;
+  color: #FFF;
 }
 
 .right-column {
@@ -63,13 +96,22 @@ span#today {
 
 .right-column :first-child {
   font-weight: bold;
+  color: #FFF;
 }
 
 .right-column :nth-child(2) {
-  color: grey;
+  font-size: 1rem;
+}
+
+.right-column :nth-child(3) {
+  font-size: 1rem;
 }
 
 #btn-add-event {
-  width: 80%;
-  margin: 3em auto 0;
+  margin: 3vh auto 0;
+  padding: 1vh;
+  border-radius: 100%;
+  background-color: #3c2c3e;
+  border-color: white;
+  color: white;
 }

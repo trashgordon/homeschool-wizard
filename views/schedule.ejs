@@ -1,48 +1,28 @@
 <div id="navbar">
   <i class="fa fa-navicon fa-2x"></i>
-  <h1>Schedule</h1>
+  <h1>Homeschool Wizard</h1>
   <i class="fa fa-calendar fa-2x"></i>
 </div>
 
-<p id="header"><span id="today">today</span> Wednesday, August 13, 2020</p>
+<p id="header"><span id="today">today</span> Wed, September 13, 2020</p>
 
-<div class="task">
+<% tasks.forEach(task => { %>
+<div class="task" id="task-1">
   <div class="left-column">
-    <p>2:00 PM</p>
+    <p><%= task.startTime %></p>
     <p>-</p>
-    <p>3:00 PM</p>
+    <p><%= task.endTime %></p>
   </div>
   <div class="right-column">
-    <p>Math Workbook</p>
-    <p>Pg. 36 - 47</p>
-    <p><i class="fa fa-percent"></i> Math</p>
+    <p><%= task.name %></p>
+    <% if (task.notes) { %>
+      <p><%= task.notes %></p>
+    <% } %>
+    <% if (task.tag) { %>
+      <p><i class="fa fa-percent"></i> <%= task.tag %></p>
+    <% } %>
   </div>
 </div>
+<% }) %>
 
-<div class="task">
-  <div class="left-column">
-    <p>3:15 PM</p>
-    <p>-</p>
-    <p>4:00 PM</p>
-  </div>
-  <div class="right-column">
-    <p>Read: Brave New World</p>
-    <p>Ch. 2 & 3</p>
-    <p><i class="fa fa-book"></i> Literature</p>
-  </div>
-</div>
-
-<div class="task">
-  <div class="left-column">
-    <p>4:00 PM</p>
-    <p>-</p>
-    <p>5:00 PM</p>
-  </div>
-  <div class="right-column">
-    <p>Finger paint</p>
-    <p>Notes</p>
-    <p><i class="fa fa-paint-brush"></i> Art</p>
-  </div>
-</div>
-
-<button id="btn-add-event">ADD EVENT</button>
+<button id="btn-add-event"><i class="fa fa-plus fa-3x"></i></button>
