@@ -16,13 +16,15 @@
   <div class="right-column">
     <p><%= task.name %></p>
     <% if (task.notes) { %>
-      <p><%= task.notes %></p>
+    <p><%= task.notes %></p>
     <% } %>
     <% if (task.tag) { %>
-      <p><i class="fa fa-percent"></i> <%= task.tag %></p>
+    <p><i class="fa fa-percent"></i> <%= task.tag %></p>
     <% } %>
   </div>
 </div>
 <% }) %>
+
+<%- include('partials/addTask.ejs') %>
 
 <button id="btn-add-event"><i class="fa fa-plus fa-3x"></i></button>

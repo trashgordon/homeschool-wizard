@@ -25,7 +25,7 @@ const tasks = [
   }
 ]
 
-router.get('/', (req, res) => {
+router.get('/schedule', (req, res) => {
   res.render('schedule', {tasks: tasks});
 });
 
