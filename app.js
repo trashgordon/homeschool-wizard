@@ -1,5 +1,6 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
+const scheduleRouter = require('./routes/schedule');
 const mongoose = require('mongoose');
 const path = require('path');
 
@@ -30,8 +31,8 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 
 // Routes
-app.use('/', require('./routes/index'));
-app.use('/users', require('./routes/user.route'))
+app.use('/schedule', scheduleRouter)
+app.use('/users', require('./routes/users'))
 
 const PORT = process.env.PORT || 3000;
 
