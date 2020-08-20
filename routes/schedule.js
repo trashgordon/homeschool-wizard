@@ -1,32 +1,34 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const router = express.Router();
 
-const tasks = [
-  {
-    name : 'Math workbook',
-    startTime : '4:00 PM',
-    endTime : '5:00 PM',
-    notes: 'Pages 56-65',
-    tag: 'Math'
-  },
-  {
-    name : 'Read Brave New World',
-    startTime : '3:00 PM',
-    endTime : '4:00 PM',
-    notes: 'Pages 112-145',
-    tag: null
-  },
-  {
-    name : 'Finger paint mural',
-    startTime : '11:00 AM',
-    endTime : '11:30 AM',
-    notes: null,
-    tag: 'Art'
-  }
-]
+const Task = require('../models/task.model');
 
-router.get('/', (req, res) => {
+// serve Schedule page
+router.get('/', async (req, res) => {
+  const tasks = await Task.find();
   res.render('schedule', {tasks: tasks});
+});
+
+// create a new task
+router.post('/api/tasks', (req, res, next) => {
+  const task = new Task({
+    _id: new mongoose.Types.ObjectId(),
+    title: req.body.title,
+    startTime: req.body.startTime,
+    endTime: req.body.endTime,
+    notes: req.body.notes,
+    tag: req.body.tag
+  });
+
+  task
+    .save()
+    .then(result => {
+      console.log(result);
+    })
+    .catch(err => console.log(err));
+
+  res.redirect('/schedule');
 });
 
 module.exports = router;

@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const ScheduleSchema = new mongoose.Schema({
   name: String,
   dayOfWeek: String,
-  events: [ Object ]
+  tasks: [ Object ]
 });
 
 const Schedule = mongoose.model('Schedule', ScheduleSchema);

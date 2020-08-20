@@ -1,20 +1,12 @@
-<div id="navbar">
-  <i class="fa fa-navicon fa-2x"></i>
-  <h1>Homeschool Wizard</h1>
-  <i class="fa fa-calendar fa-2x"></i>
-</div>
-
-<p id="header"><span id="today">today</span> Wed, September 13, 2020</p>
-
 <% tasks.forEach(task => { %>
-<div class="task" id="task-1">
+<div class="task">
   <div class="left-column">
     <p><%= task.startTime %></p>
     <p>-</p>
     <p><%= task.endTime %></p>
   </div>
   <div class="right-column">
-    <p><%= task.name %></p>
+    <p><%= task.title %></p>
     <% if (task.notes) { %>
     <p><%= task.notes %></p>
     <% } %>
@@ -27,4 +19,17 @@
 
 <%- include('partials/addTask.ejs') %>
 
+<button id="btn-add-task" onclick="showForm()"><i class="fa fa-plus fa-3x"></i></button>
+
+<script>
+  (function hideForm() {
+    $('#add-task').hide();
+  })();
+
+  function showForm() {
+    $('#add-task').show();
+  }
+</script>
+
 <button id="btn-add-event"><i class="fa fa-plus fa-3x"></i></button>
+

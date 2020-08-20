@@ -5,17 +5,17 @@ const router = express.Router();
 
 const { User, validate } = require('../models/user.model');
 
-// Login Page
+// serve Login page
 router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// Register Page
+// serve Register page
 router.get('/register', (req, res) => {
   res.render('register');
 });
 
-// Register Handle
+// handle user registration
 router.post('/register', async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res
@@ -27,7 +27,7 @@ router.post('/register', async (req, res) => {
     .status(400)
     .send('User is already registered');
   
-    user = new User(_.pick(req.body, ['name', 'email', 'password']));
+  user = new User(_.pick(req.body, ['firstName', 'lastName', 'email', 'password']));
 
   const salt = await bcrypt.genSalt(10);
   user.password = await bcrypt.hash(user.password, salt);
@@ -38,7 +38,7 @@ router.post('/register', async (req, res) => {
 
   res
     .header('x-auth-token', token)
-    .send(_.pick(user, ['_id', 'name', 'email']));
+    .send(_.pick(user, ['_id', 'firstName', 'lastName', 'email']));
 });
 
 module.exports = router;
