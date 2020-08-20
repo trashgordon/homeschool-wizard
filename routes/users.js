@@ -5,17 +5,17 @@ const router = express.Router();
 
 const { User, validate } = require('../models/user.model');
 
-// Login Page
+// serve Login page
 router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// Register Page
+// serve Register page
 router.get('/register', (req, res) => {
   res.render('register');
 });
 
-// Register Handle
+// handle user registration
 router.post('/register', async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res

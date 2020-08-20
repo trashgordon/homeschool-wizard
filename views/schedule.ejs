@@ -27,4 +27,14 @@
 
 <%- include('partials/addTask.ejs') %>
 
-<button id="btn-add-event"><i class="fa fa-plus fa-3x"></i></button>
+<button id="btn-add-task" onclick="showForm()"><i class="fa fa-plus fa-3x"></i></button>
+
+<script>
+  (function hideForm() {
+    $('#add-task').hide();
+  })();
+
+  function showForm() {
+    $('#add-task').show();
+  }
+</script>
