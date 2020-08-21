@@ -1,3 +1,36 @@
+<script>
+
+  function displayTagIcons() {
+    switch (task.tag) {
+      case "Art":
+        $(".task-tag").prepend("<i class=\"fa fa-paintbrush\"></i>")
+        break;
+      case "Literature":
+        $(".task-tag").addClass("fa fa-book");
+      case "Math":
+        $(".task-tag").addClass("fa fa-percent");
+      case "Science":
+        $(".task-tag").addClass("fa fa-car");
+    }
+  }
+
+  (function hideForm() {
+    $('#add-task').hide();
+    $('#btn-hide-form').hide();    
+  })();
+
+  function showForm() {
+    $('#add-task').show();
+    $('#btn-hide-form').show();
+  }
+
+  function cancelForm() {
+    $('#add-task').hide();
+    $('#btn-hide-form').hide();    
+  }
+</script>
+
+
 <% tasks.forEach(task => { %>
 <div class="task">
   <div class="left-column">
@@ -6,12 +39,12 @@
     <p><%= task.endTime %></p>
   </div>
   <div class="right-column">
-    <p><%= task.title %></p>
+    <p class="task-title"><%= task.title %></p>
     <% if (task.notes) { %>
     <p><%= task.notes %></p>
     <% } %>
     <% if (task.tag) { %>
-    <p><i class="fa fa-percent"></i> <%= task.tag %></p>
+    <p class="task-tag"><script>displayTagIcons()</script>  <%= task.tag %></p>
     <% } %>
   </div>
 </div>
@@ -21,15 +54,5 @@
 
 <button id="btn-add-task" onclick="showForm()"><i class="fa fa-plus fa-3x"></i></button>
 
-<script>
-  (function hideForm() {
-    $('#add-task').hide();
-  })();
 
-  function showForm() {
-    $('#add-task').show();
-  }
-</script>
-
-<button id="btn-add-event"><i class="fa fa-plus fa-3x"></i></button>
 

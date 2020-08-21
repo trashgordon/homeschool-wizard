@@ -1,2 +1,7 @@
+.task {
+  color: white;
+}
 
-
+#add-task input {
+  color: black;
+}

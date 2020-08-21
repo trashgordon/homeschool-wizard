@@ -31,8 +31,9 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 
 // Routes
-app.use('/schedule', scheduleRouter)
-app.use('/users', require('./routes/users'))
+app.use('/schedule', scheduleRouter);
+app.use('/users', require('./routes/users'));
+app.use('/todo', require('./routes/toDo'));
 
 const PORT = process.env.PORT || 3000;
 
