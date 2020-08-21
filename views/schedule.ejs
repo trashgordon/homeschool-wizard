@@ -1,23 +1,8 @@
 <script>
-
-  function displayTagIcons() {
-    switch (task.tag) {
-      case "Art":
-        $(".task-tag").prepend("<i class=\"fa fa-paintbrush\"></i>")
-        break;
-      case "Literature":
-        $(".task-tag").addClass("fa fa-book");
-      case "Math":
-        $(".task-tag").addClass("fa fa-percent");
-      case "Science":
-        $(".task-tag").addClass("fa fa-car");
-    }
-  }
-
   (function hideForm() {
     $('#add-task').hide();
     $('#btn-hide-form').hide();    
-  })();
+  })()
 
   function showForm() {
     $('#add-task').show();
@@ -30,7 +15,6 @@
   }
 </script>
 
-
 <% tasks.forEach(task => { %>
   <% if (task.tag === 'lunch') { %>
     <h1>Lunch</h1>
@@ -38,7 +22,7 @@
     <h1>Break</h1>
   <% } else { %>
     <h1>Class</h1>
-  <% }; %>
+  <% } %>
   <div class="task-container">
     <div class="left-column">
       <p><%= task.startTime %></p>
@@ -50,9 +34,31 @@
       <% if (task.notes) { %>
       <p><%= task.notes %></p>
       <% } %>
-      <% if (task.tag) { %>
-      <p><i class=""></i> <%= task.tag %></p>
-      <% } %>
+      <p>
+        <% switch (task.tag) {
+          case "art": %>
+            <i class="fa fa-paint-brush"></i> 
+            <% break
+          case "break": %>
+            <i class="fa fa-walking"></i> 
+            <% break
+          case "history": %>
+            <i class="fa fa-monument"></i> 
+            <% break
+          case "literature": %>
+            <i class="fa fa-book"></i> 
+            <% break
+          case "lunch": %>
+            <i class="fa fa-utensils"></i> 
+            <% break
+          case "math": %>
+            <i class="fa fa-percent"></i> 
+            <% break
+          case "science": %>
+            <i class="fa fa-flask"></i> 
+        <% } %>
+        <%= task.tag %>
+      </p>
     </div>
   </div>
 <% }) %>
