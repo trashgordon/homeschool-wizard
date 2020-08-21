@@ -1,14 +1,13 @@
 {
   "name": "homeschool-wizard",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Andrea Jenkins",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -34,5 +33,14 @@
     "debug": "^4.1.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trashgordon/homeschool-wizard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/trashgordon/homeschool-wizard/issues"
+  },
+  "homepage": "https://github.com/trashgordon/homeschool-wizard#readme",
+  "description": ""
 }

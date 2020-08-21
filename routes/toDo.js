@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-// serve ToDo page
-router.get('/', async (req, res) => {
+// serve toDo page
+router.get('/', (req, res) => {
   res.render('toDo');
 });
 
 module.exports = router;
+
