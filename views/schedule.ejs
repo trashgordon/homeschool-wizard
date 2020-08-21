@@ -1,3 +1,36 @@
+<script>
+
+  function displayTagIcons() {
+    switch (task.tag) {
+      case "Art":
+        $(".task-tag").prepend("<i class=\"fa fa-paintbrush\"></i>")
+        break;
+      case "Literature":
+        $(".task-tag").addClass("fa fa-book");
+      case "Math":
+        $(".task-tag").addClass("fa fa-percent");
+      case "Science":
+        $(".task-tag").addClass("fa fa-car");
+    }
+  }
+
+  (function hideForm() {
+    $('#add-task').hide();
+    $('#btn-hide-form').hide();    
+  })();
+
+  function showForm() {
+    $('#add-task').show();
+    $('#btn-hide-form').show();
+  }
+
+  function cancelForm() {
+    $('#add-task').hide();
+    $('#btn-hide-form').hide();    
+  }
+</script>
+
+
 <% tasks.forEach(task => { %>
 <h1>Class</h1>
 <div class="task-container">
@@ -7,7 +40,7 @@
     <p><%= task.endTime %></p>
   </div>
   <div class="right-column">
-    <p><%= task.title %></p>
+    <p class="task-title"><%= task.title %></p>
     <% if (task.notes) { %>
     <p><%= task.notes %></p>
     <% } %>
@@ -23,16 +56,5 @@
 
 <button class="btn btn-primary mx-auto" onclick="showForm()" id="btn-add-task" type="text">Add Task</button>
 
-<script>
-  (function hideForm() {
-    $('#add-task').hide();
-  })();
-
-  function showForm() {
-    $('#add-task').show();
-  }
-</script>
-
 <button class="btn btn-primary mx-auto" onclick="showForm()" id="btn-add-event" type="text">Add Event</button>
 </div>
-

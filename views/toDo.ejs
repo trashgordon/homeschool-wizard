@@ -1,38 +1,35 @@
 <script>
-$(document).ready(function(){
-
-$("ul").on("click", "li", function(){
-$(this).toggleClass("completed");
-});
-
-
-$("ul").on("click", "span", function(event){
-$(this).parent().fadeOut(500,function(){
-$(this).remove();
-});
-event.stopPropagation();
-});
-
-$("input[type='text']").keypress(function(event){
-if(event.which === 13){
-
-var todoText = $(this).val();
-$(this).val("");
-
-$("ul").append("<li><span><i class='fa fa-trash'></i></span> " + todoText + "</li>")
-}
-});
-
-$(".fa-plus").click(function(){
-$("input[type='text']").fadeToggle();
-});
+  $(document).ready(function(){
+    $("ul").on("click", "li", function(){
+    $(this).toggleClass("completed");
+    });
 
 
-});
+    $("ul").on("click", "span", function(event){
+    $(this).parent().fadeOut(500,function(){
+    $(this).remove();
+    });
+    event.stopPropagation();
+    });
 
+    $("input[type='text']").keypress(function(event){
+    if(event.which === 13){
+
+    var todoText = $(this).val();
+    $(this).val("");
+
+    $("ul").append("<li><span><i class='fa fa-trash'></i></span> " + todoText + "</li>")
+    }
+    });
+
+    $(".fa-plus").click(function(){
+    $("input[type='text']").fadeToggle();
+    });
+  });
 </script>
 
 <%- include('partials/nav.ejs')%>
+<<<<<<< HEAD
    <div class="toDoContainer">
     <h1>Weekly To-Do <i class="fa fa-plus"></i></h1> <input type="text" placeholder="Add New Activity">
     <ul>
@@ -43,4 +40,16 @@ $("input[type='text']").fadeToggle();
         <li><span><i class="fa fa-minus"></i></span> Listen to a Podcast</li>
     </ul>
   </div>
+=======
+>>>>>>> 827806bf49fd0f078a332b0ba50f9aaa1871a818
 
+<div class="toDoContainer">
+  <h1>Weekly To-Do <i class="fa fa-plus"></i></h1> <input type="text" placeholder="Add New Activity">
+  <ul>
+    <li><span><i class="fa fa-trash"></i></span> Math Worksheet</li>
+    <li><span><i class="fa fa-trash"></i></span> Science Video</li>
+    <li><span><i class="fa fa-trash"></i></span> Arts and Crafts</li>
+    <li><span><i class="fa fa-trash"></i></span> Nature Walk</li>
+    <li><span><i class="fa fa-trash"></i></span> Listen to a Podcast</li>
+  </ul>
+</div>
