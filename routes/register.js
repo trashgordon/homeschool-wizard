@@ -5,18 +5,13 @@ const router = express.Router();
 
 const { User, validate } = require('../models/user.model');
 
-// serve Login page
-router.get('/login', (req, res) => {
-  res.render('login');
-});
-
 // serve Register page
-router.get('/register', (req, res) => {
+router.get('/', (req, res) => {
   res.render('register');
 });
 
 // handle user registration
-router.post('/register', async (req, res) => {
+router.post('/', async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res
     .status(400)

@@ -17,24 +17,24 @@
 
 <% tasks.forEach(task => { %>
   <% if (task.tag === 'lunch') { %>
-    <h1>Lunch</h1>
+    <h1 class="event-header">Lunch</h1>
   <% } else if (task.tag === 'break') { %>
-    <h1>Break</h1>
+    <h1 class="event-header">Break</h1>
   <% } else { %>
-    <h1>Class</h1>
+    <h1 class="event-header">Class</h1>
   <% } %>
-  <div class="task-container">
-    <div class="left-column">
-      <p><%= task.startTime %></p>
+  <div class="event-container">
+    <div class="event-left-column">
+      <p class="event-startTime"><%= task.startTime %></p>
       <p>-</p>
-      <p><%= task.endTime %></p>
+      <p class="event-endTime"><%= task.endTime %></p>
     </div>
-    <div class="right-column">
-      <p class="task-title"><%= task.title %></p>
+    <div class="event-right-column">
+      <p class="event-title"><%= task.title %></p>
       <% if (task.notes) { %>
-      <p><%= task.notes %></p>
+      <p class="event-notes"><%= task.notes %></p>
       <% } %>
-      <p>
+      <p class="event-tag">
         <% switch (task.tag) {
           case "art": %>
             <i class="fa fa-paint-brush"></i> 

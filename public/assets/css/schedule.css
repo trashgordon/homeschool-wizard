@@ -1,4 +1,4 @@
-h1 {
+.event-header {
     color: white;
     margin: 0;
     padding: 30px 30px;
@@ -8,41 +8,8 @@ h1 {
     font-family: sans-serif;
     text-align: center;
 }
-#btn-add-task {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  border-radius: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  -webkit-appearance: button;
-  margin:auto;
-  font-size: 1rem;
 
-}
-#btn-add-event {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  border-radius: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  -webkit-appearance: button;
-  margin: auto;
-  font-size: 1rem;
-
-}
-
-.addButtonSection{
-padding-top: 10px;
-padding-bottom: 10px;
-}
-
-/* .container {
-  background-color: black;
-} */
-
-.task-container {
+.event-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap-reverse;
@@ -56,12 +23,50 @@ padding-bottom: 10px;
   text-transform: uppercase;
 }
 
-.left-column {
+.event-title {
+  color: lightskyblue;
+  font-size: 1em;
+}
+
+.event-left-column {
   padding: 1em;
   width: 30%;
 }
 
-.right-column {
+.event-right-column {
   width: 70%;
   padding: 1em;
+}
+
+.fa-paint-brush, .fa-flask, .fa-percent, .fa-walking, .fa-book, .fa-utensils, .fa-monument {
+  color: lightskyblue;
+}
+
+.addButtonSection{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#btn-add-task {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  -webkit-appearance: button;
+  margin:auto;
+  font-size: 1rem;
+}
+
+#btn-add-event {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  -webkit-appearance: button;
+  margin: auto;
+  font-size: 1rem;
 }
