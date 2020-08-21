@@ -16,7 +16,7 @@
 
   (function hideForm() {
     $('#add-task').hide();
-    $('#btn-hide-form').hide();    
+    $('#btn-hide-form').hide();
   })();
 
   function showForm() {
@@ -26,18 +26,18 @@
 
   function cancelForm() {
     $('#add-task').hide();
-    $('#btn-hide-form').hide();    
+    $('#btn-hide-form').hide();
   }
 </script>
 
 
 <% tasks.forEach(task => { %>
   <% if (task.tag === 'lunch') { %>
-    <h1>Lunch</h1>
+    <h1 class = "schedule-h1">Lunch</h1>
   <% } else if (task.tag === 'break') { %>
-    <h1>Break</h1>
+    <h1 class = "schedule-h1">Break</h1>
   <% } else { %>
-    <h1>Class</h1>
+    <h1 class = "schedule-h1">Class</h1>
   <% }; %>
   <div class="task-container">
     <div class="left-column">
@@ -145,3 +145,4 @@
 <!-- <div class = "addButtonSection"> -->
 
 <button class="btn btn-primary mx-auto" onclick="showForm()" id="btn-add-task" type="text">Add Task</button>
+
