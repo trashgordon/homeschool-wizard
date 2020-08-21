@@ -25,14 +25,15 @@ mongoose
   })
 
 // Middleware
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public/'));
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 
 // Routes
 app.use('/schedule', scheduleRouter);
-app.use('/users', require('./routes/users'));
+app.use('/login', require('./routes/login'));
+app.use('/register', require('./routes/register'));
 app.use('/todo', require('./routes/toDo'));
 
 const PORT = process.env.PORT || 3000;
