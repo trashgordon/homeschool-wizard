@@ -6,7 +6,7 @@ const Task = require('../models/task.model');
 
 // serve Schedule page
 router.get('/', async (req, res) => {
-  const tasks = await Task.find();
+  const tasks = await Task.find().sort({startTime : 1});
   res.render('schedule', {tasks: tasks});
 });
 

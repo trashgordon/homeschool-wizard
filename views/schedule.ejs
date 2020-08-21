@@ -32,29 +32,116 @@
 
 
 <% tasks.forEach(task => { %>
-<h1>Class</h1>
-<div class="container">
-  <div class="left-column">
-    <p><%= task.startTime %></p>
-    <p>-</p>
-    <p><%= task.endTime %></p>
+  <% if (task.tag === 'lunch') { %>
+    <h1>Lunch</h1>
+  <% } else if (task.tag === 'break') { %>
+    <h1>Break</h1>
+  <% } else { %>
+    <h1>Class</h1>
+  <% }; %>
+  <div class="task-container">
+    <div class="left-column">
+      <p><%= task.startTime %></p>
+      <p>-</p>
+      <p><%= task.endTime %></p>
+    </div>
+    <div class="right-column">
+      <p class="task-title"><%= task.title %></p>
+      <% if (task.notes) { %>
+      <p><%= task.notes %></p>
+      <% } %>
+      <% if (task.tag) { %>
+      <p><i class=""></i> <%= task.tag %></p>
+      <% } %>
+    </div>
   </div>
-  <div class="right-column">
-    <p class="task-title"><%= task.title %></p>
-    <% if (task.notes) { %>
-    <p><%= task.notes %></p>
-    <% } %>
-    <% if (task.tag) { %>
-    <p><i class=""></i> <%= task.tag %></p>
-    <% } %>
-  </div>
-</div>
 <% }) %>
 
+<!-- <h1>Class</h1>
+<div class="task-container" style="border-color:aquamarine">
+  <div class="left-column">
+    <p>10:00 AM</p>
+    <p>-</p>
+    <p>11:00 AM</p>
+  </div>
+  <div class="right-column">
+    <p class="task-title">Read Harry Potter</p>
+    <p>Chapters 3 & 4</p>
+    <p><i class="fa fa-book"></i> Literature</p>
+  </div>
+</div>
+
+<h1>Class</h1>
+<div class="task-container" style="border-color:aquamarine">
+  <div class="left-column">
+    <p>11:00 AM</p>
+    <p>-</p>
+    <p>12:00 PM</p>
+  </div>
+  <div class="right-column">
+    <p class="task-title">Build volcano</p>
+    <p>Supplies under kitchen sink</p>
+    <p><i class="fa fa-flask"></i> Science</p>
+  </div>
+</div>
+
+<h1>Lunch</h1>
+<div class="task-container" style="border-color:lightcoral;">
+  <div class="left-column">
+    <p>12:00 PM</p>
+    <p>-</p>
+    <p>1:00 PM</p>
+  </div>
+  <div class="right-column">
+    <p class="task-title">Lunch time</p>
+    <p>PB&J Sandwich</p>
+    <p><i class="fa fa-utensils"></i> Lunch</p>
+  </div>
+</div>
+
+<h1>Class</h1>
+<div class="task-container" style="border-color:aquamarine">
+  <div class="left-column">
+    <p>1:00 PM</p>
+    <p>-</p>
+    <p>2:00 PM</p>
+  </div>
+  <div class="right-column">
+    <p class="task-title">Algebra workbook</p>
+    <p>Complete pages 45 - 73</p>
+    <p><i class="fa fa-percent"></i> Math</p>
+  </div>
+</div>
+
+<h1>Break</h1>
+<div class="task-container" style="border-color:lightcoral;">
+  <div class="left-column">
+    <p>2:00 PM</p>
+    <p>-</p>
+    <p>2:15 PM</p>
+  </div>
+  <div class="right-column">
+    <p class="task-title">Go outside and play</p>
+    <p>Don't hurt yourself</p>
+    <p><i class="fa fa-walking"></i> Fun</p>
+  </div>
+</div>
+
+<h1>Class</h1>
+<div class="task-container" style="border-color:aquamarine">
+  <div class="left-column">
+    <p>2:15 PM</p>
+    <p>-</p>
+    <p>3:00 PM</p>
+  </div>
+  <div class="right-column">
+    <p class="task-title">Study for History quiz</p>
+    <p>Sections 5 & 6</p>
+    <p><i class="fa fa-monument"></i> History</p>
+  </div>
+</div> -->
+
 <%- include('partials/addTask.ejs') %>
-<div class = "addButtonSection">
+<!-- <div class = "addButtonSection"> -->
 
 <button class="btn btn-primary mx-auto" onclick="showForm()" id="btn-add-task" type="text">Add Task</button>
-
-<button class="btn btn-primary mx-auto" onclick="showForm()" id="btn-add-event" type="text">Add Event</button>
-</div>
