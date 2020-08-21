@@ -32,7 +32,8 @@
 
 
 <% tasks.forEach(task => { %>
-<div class="task">
+<h1>Class</h1>
+<div class="container">
   <div class="left-column">
     <p><%= task.startTime %></p>
     <p>-</p>
@@ -44,15 +45,16 @@
     <p><%= task.notes %></p>
     <% } %>
     <% if (task.tag) { %>
-    <p class="task-tag"><script>displayTagIcons()</script>  <%= task.tag %></p>
+    <p><i class=""></i> <%= task.tag %></p>
     <% } %>
   </div>
 </div>
 <% }) %>
 
 <%- include('partials/addTask.ejs') %>
+<div class = "addButtonSection">
 
-<button id="btn-add-task" onclick="showForm()"><i class="fa fa-plus fa-3x"></i></button>
+<button class="btn btn-primary mx-auto" onclick="showForm()" id="btn-add-task" type="text">Add Task</button>
 
-
-
+<button class="btn btn-primary mx-auto" onclick="showForm()" id="btn-add-event" type="text">Add Event</button>
+</div>
