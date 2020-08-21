@@ -33,7 +33,8 @@ app.use(express.urlencoded({ extended: false }));
 // Routes
 app.use('/schedule', scheduleRouter)
 app.use('/users', require('./routes/users'))
-
+app.use('/toDo', require('./routes/toDo'))
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, console.log(`[+] Express server listening on port ${PORT}`));
+
