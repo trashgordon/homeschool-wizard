@@ -10,7 +10,7 @@ body {
  }
 
  h1 {
-     background: black;
+     /* background: black; */
      color: white;
      margin: 0;
      padding: 10px 30px;
