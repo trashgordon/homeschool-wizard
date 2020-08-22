@@ -4,13 +4,13 @@ const router = express.Router();
 
 const Event = require('../models/event.model');
 
-// serve Schedule page
+// Get all events
 router.get('/', async (req, res) => {
   const events = await Event.find().sort({startTime : 1});
   res.render('schedule', {events: events});
 });
 
-// create a new event
+// Create an event
 router.post('/api/events', (req, res, next) => {
   const event = new Event({
     _id: new mongoose.Types.ObjectId(),
@@ -29,6 +29,16 @@ router.post('/api/events', (req, res, next) => {
     .catch(err => console.log(err));
 
   res.redirect('/schedule');
+});
+
+// Delete an event
+router.delete('/api/events/:id', (req, res) => {
+  Event
+    .find({ _id: req.params.item })
+    .deleteOne((err, data) => {
+      if (err) throw err;
+      res.json(data);
+    });
 });
 
 module.exports = router;

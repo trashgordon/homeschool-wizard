@@ -1,17 +1,47 @@
 <% events.forEach(event => { %>
-  <% if (event.tag === 'lunch') { %>
-    <h1 class="event-header">Lunch</h1>
-    <div class="event-container event-lunch">
-  <% } else if (event.tag === 'break') { %>
-    <h1 class="event-header">Break</h1>
-    <div class="event-container event-break">
-  <% } else { %>
-    <h1 class="event-header">Class</h1>
-    <div class="event-container event-class">
+  <% switch (event.tag) {
+    case "art": %>
+      <div class="event-container event-class">
+        <div class="event-left-column">
+        <p class="event-header"><i class="fa fa-paint-brush"></i> <%= event.tag %></p>
+      
+      <% break
+    case "break": %>
+      <div class="event-container event-break">
+        <div class="event-left-column">
+        <p class="event-header"><i class="fa fa-walking"></i> <%= event.tag %></p>
+      
+      <% break
+    case "history": %>
+      <div class="event-container event-class">
+        <div class="event-left-column">
+        <p class="event-header"><i class="fa fa-monument"></i> <%= event.tag %></p>
+      
+      <% break
+    case "literature": %>
+      <div class="event-container event-class">
+        <div class="event-left-column">
+        <p class="event-header"><i class="fa fa-book"></i> <%= event.tag %></p>
+      
+      <% break
+    case "lunch": %>
+      <div class="event-container event-lunch">
+        <div class="event-left-column">
+        <p class="event-header"><i class="fa fa-utensils"></i> <%= event.tag %></p>
+      
+      <% break
+    case "math": %>
+      <div class="event-container event-class">
+        <div class="event-left-column">
+        <p class="event-header"><i class="fa fa-percent"></i> <%= event.tag %></p>
+      
+      <% break
+    case "science": %>
+      <div class="event-container event-class">
+        <div class="event-left-column">
+        <p class="event-header"><i class="fa fa-flask"></i> <%= event.tag %></p>
   <% } %>
-    <div class="event-left-column">
       <p class="event-startTime"><%= event.startTime %></p>
-      <p>-</p>
       <p class="event-endTime"><%= event.endTime %></p>
     </div>
     <div class="event-right-column">
@@ -19,31 +49,10 @@
       <% if (event.notes) { %>
       <p class="event-notes"><%= event.notes %></p>
       <% } %>
-      <p class="event-tag">
-        <% switch (event.tag) {
-          case "art": %>
-            <i class="fa fa-paint-brush"></i> 
-            <% break
-          case "break": %>
-            <i class="fa fa-walking"></i> 
-            <% break
-          case "history": %>
-            <i class="fa fa-monument"></i> 
-            <% break
-          case "literature": %>
-            <i class="fa fa-book"></i> 
-            <% break
-          case "lunch": %>
-            <i class="fa fa-utensils"></i> 
-            <% break
-          case "math": %>
-            <i class="fa fa-percent"></i> 
-            <% break
-          case "science": %>
-            <i class="fa fa-flask"></i> 
-        <% } %>
-        <%= event.tag %>
-      </p>
+    </div>
+    <div class="btn-slideOut">
+      <span><i class="fa fa-minus"></i></span>
+      <span><i class="fa fa-minus"></i></span>
     </div>
   </div>
 <% }) %>
@@ -51,7 +60,7 @@
 <%- include('partials/addEvent.ejs') %>
 <!-- <div class = "addButtonSection"> -->
 
-<button class="btn btn-primary mx-auto" onclick="showForm()" id="btn-add-event"
+<button class="btn btn-primary" onclick="showForm()" id="btn-add-event"
 type="text">Add Event</button>
 
 <script>
@@ -68,5 +77,9 @@ type="text">Add Event</button>
   function cancelForm() {
     $('#add-event').hide();
     $('#btn-hide-form').hide();    
+  }
+
+  function showSlideOutButtons() {
+    $(".btn-slideOut").show();
   }
 </script>
