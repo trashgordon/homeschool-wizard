@@ -4,37 +4,37 @@
       <div class="event-container event-class">
         <div class="event-left-column">
         <p class="event-header"><i class="fa fa-paint-brush"></i> <%= event.tag %></p>
-
+      
       <% break
     case "break": %>
       <div class="event-container event-break">
         <div class="event-left-column">
         <p class="event-header"><i class="fa fa-walking"></i> <%= event.tag %></p>
-        // it works!
+      
       <% break
     case "history": %>
       <div class="event-container event-class">
         <div class="event-left-column">
         <p class="event-header"><i class="fa fa-monument"></i> <%= event.tag %></p>
-
+      
       <% break
     case "literature": %>
       <div class="event-container event-class">
         <div class="event-left-column">
         <p class="event-header"><i class="fa fa-book"></i> <%= event.tag %></p>
-
+      
       <% break
     case "lunch": %>
       <div class="event-container event-lunch">
         <div class="event-left-column">
         <p class="event-header"><i class="fa fa-utensils"></i> <%= event.tag %></p>
-
+      
       <% break
     case "math": %>
       <div class="event-container event-class">
         <div class="event-left-column">
         <p class="event-header"><i class="fa fa-percent"></i> <%= event.tag %></p>
-
+      
       <% break
     case "science": %>
       <div class="event-container event-class">
@@ -51,7 +51,7 @@
       <% } %>
     </div>
     <div class="btn-slideOut">
-      <span><i class="fa fa-minus"></i></span>
+      <span on><i class="fa fa-minus"></i></span>
       <span><i class="fa fa-minus"></i></span>
     </div>
   </div>
@@ -66,7 +66,7 @@ type="text">Add Event</button>
 <script>
   (function hideForm() {
     $('#add-event').hide();
-    $('#btn-hide-form').hide();
+    $('#btn-hide-form').hide();    
   })();
 
   function showForm() {
@@ -76,11 +76,10 @@ type="text">Add Event</button>
 
   function cancelForm() {
     $('#add-event').hide();
-    $('#btn-hide-form').hide();
+    $('#btn-hide-form').hide();    
   }
 
   function showSlideOutButtons() {
     $(".btn-slideOut").show();
   }
 </script>
-
