@@ -1,41 +1,26 @@
-<script>
-  (function hideForm() {
-    $('#add-task').hide();
-    $('#btn-hide-form').hide();    
-  })()
-
-  function showForm() {
-    $('#add-task').show();
-    $('#btn-hide-form').show();
-  }
-
-  function cancelForm() {
-    $('#add-task').hide();
-    $('#btn-hide-form').hide();    
-  }
-</script>
-
-<% tasks.forEach(task => { %>
-  <% if (task.tag === 'lunch') { %>
+<% events.forEach(event => { %>
+  <% if (event.tag === 'lunch') { %>
     <h1 class="event-header">Lunch</h1>
-  <% } else if (task.tag === 'break') { %>
+    <div class="event-container event-lunch">
+  <% } else if (event.tag === 'break') { %>
     <h1 class="event-header">Break</h1>
+    <div class="event-container event-break">
   <% } else { %>
     <h1 class="event-header">Class</h1>
+    <div class="event-container event-class">
   <% } %>
-  <div class="event-container">
     <div class="event-left-column">
-      <p class="event-startTime"><%= task.startTime %></p>
+      <p class="event-startTime"><%= event.startTime %></p>
       <p>-</p>
-      <p class="event-endTime"><%= task.endTime %></p>
+      <p class="event-endTime"><%= event.endTime %></p>
     </div>
     <div class="event-right-column">
-      <p class="event-title"><%= task.title %></p>
-      <% if (task.notes) { %>
-      <p class="event-notes"><%= task.notes %></p>
+      <p class="event-title"><%= event.title %></p>
+      <% if (event.notes) { %>
+      <p class="event-notes"><%= event.notes %></p>
       <% } %>
       <p class="event-tag">
-        <% switch (task.tag) {
+        <% switch (event.tag) {
           case "art": %>
             <i class="fa fa-paint-brush"></i> 
             <% break
@@ -57,97 +42,31 @@
           case "science": %>
             <i class="fa fa-flask"></i> 
         <% } %>
-        <%= task.tag %>
+        <%= event.tag %>
       </p>
     </div>
   </div>
 <% }) %>
 
-<!-- <h1>Class</h1>
-<div class="task-container" style="border-color:aquamarine">
-  <div class="left-column">
-    <p>10:00 AM</p>
-    <p>-</p>
-    <p>11:00 AM</p>
-  </div>
-  <div class="right-column">
-    <p class="task-title">Read Harry Potter</p>
-    <p>Chapters 3 & 4</p>
-    <p><i class="fa fa-book"></i> Literature</p>
-  </div>
-</div>
-
-<h1>Class</h1>
-<div class="task-container" style="border-color:aquamarine">
-  <div class="left-column">
-    <p>11:00 AM</p>
-    <p>-</p>
-    <p>12:00 PM</p>
-  </div>
-  <div class="right-column">
-    <p class="task-title">Build volcano</p>
-    <p>Supplies under kitchen sink</p>
-    <p><i class="fa fa-flask"></i> Science</p>
-  </div>
-</div>
-
-<h1>Lunch</h1>
-<div class="task-container" style="border-color:lightcoral;">
-  <div class="left-column">
-    <p>12:00 PM</p>
-    <p>-</p>
-    <p>1:00 PM</p>
-  </div>
-  <div class="right-column">
-    <p class="task-title">Lunch time</p>
-    <p>PB&J Sandwich</p>
-    <p><i class="fa fa-utensils"></i> Lunch</p>
-  </div>
-</div>
-
-<h1>Class</h1>
-<div class="task-container" style="border-color:aquamarine">
-  <div class="left-column">
-    <p>1:00 PM</p>
-    <p>-</p>
-    <p>2:00 PM</p>
-  </div>
-  <div class="right-column">
-    <p class="task-title">Algebra workbook</p>
-    <p>Complete pages 45 - 73</p>
-    <p><i class="fa fa-percent"></i> Math</p>
-  </div>
-</div>
-
-<h1>Break</h1>
-<div class="task-container" style="border-color:lightcoral;">
-  <div class="left-column">
-    <p>2:00 PM</p>
-    <p>-</p>
-    <p>2:15 PM</p>
-  </div>
-  <div class="right-column">
-    <p class="task-title">Go outside and play</p>
-    <p>Don't hurt yourself</p>
-    <p><i class="fa fa-walking"></i> Fun</p>
-  </div>
-</div>
-
-<h1>Class</h1>
-<div class="task-container" style="border-color:aquamarine">
-  <div class="left-column">
-    <p>2:15 PM</p>
-    <p>-</p>
-    <p>3:00 PM</p>
-  </div>
-  <div class="right-column">
-    <p class="task-title">Study for History quiz</p>
-    <p>Sections 5 & 6</p>
-    <p><i class="fa fa-monument"></i> History</p>
-  </div>
-</div> -->
-
-<%- include('partials/addTask.ejs') %>
+<%- include('partials/addEvent.ejs') %>
 <!-- <div class = "addButtonSection"> -->
 
-<button class="btn btn-primary mx-auto" onclick="showForm()" id="btn-add-task" type="text">Add Task</button>
+<button class="btn btn-primary mx-auto" onclick="showForm()" id="btn-add-event"
+type="text">Add Event</button>
+
+<script>
+  (function hideForm() {
+    $('#add-event').hide();
+    $('#btn-hide-form').hide();    
+  })();
+
+  function showForm() {
+    $('#add-event').show();
+    $('#btn-hide-form').show();
+  }
+
+  function cancelForm() {
+    $('#add-event').hide();
+    $('#btn-hide-form').hide();    
+  }
+</script>
