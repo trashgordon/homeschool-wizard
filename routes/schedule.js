@@ -2,17 +2,17 @@ const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
 
-const Task = require('../models/task.model');
+const Event = require('../models/event.model');
 
 // serve Schedule page
 router.get('/', async (req, res) => {
-  const tasks = await Task.find().sort({startTime : 1});
-  res.render('schedule', {tasks: tasks});
+  const events = await Event.find().sort({startTime : 1});
+  res.render('schedule', {events: events});
 });
 
-// create a new task
-router.post('/api/tasks', (req, res, next) => {
-  const task = new Task({
+// create a new event
+router.post('/api/events', (req, res, next) => {
+  const event = new Event({
     _id: new mongoose.Types.ObjectId(),
     title: req.body.title,
     startTime: req.body.startTime,
@@ -21,7 +21,7 @@ router.post('/api/tasks', (req, res, next) => {
     tag: req.body.tag
   });
 
-  task
+  event
     .save()
     .then(result => {
       console.log(result);
