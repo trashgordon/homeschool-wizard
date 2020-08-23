@@ -1,5 +1,13 @@
 .container {
+  height: 80%;
+}
+
+#schedule-container {
+  margin-top: 15vh;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .event-header {
     color: white;

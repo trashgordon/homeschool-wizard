@@ -4073,7 +4073,7 @@ input[type=button].btn-block {
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
-  margin-right: 1rem;
+  /* margin-right: 1rem; */
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
@@ -4115,8 +4115,9 @@ input[type=button].btn-block {
   font-size: 1.25rem;
   line-height: 1;
   background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
+  border: none;
+  /* border: 1px solid transparent;
+  border-radius: 0.25rem; */
 }
 .navbar-toggler:hover, .navbar-toggler:focus {
   text-decoration: none;
@@ -10139,13 +10140,14 @@ body {
 
 #mainNav {
   min-height: 3.5rem;
-  background-color: #fff;
+  background-color: #111;
 }
 #mainNav .navbar-toggler {
-  font-size: 80%;
-  padding: 0.75rem;
+  font-size: 200%;
+  padding: 1rem;
   color: #64a19d;
-  border: 1px solid #64a19d;
+  border: none;
+  /* border: 1px solid #64a19d; */
 }
 #mainNav .navbar-toggler:focus {
   outline: none;
@@ -10153,7 +10155,7 @@ body {
 #mainNav .navbar-brand {
   color: #000000;
   font-weight: 700;
-  padding: 0.9rem 0;
+  /* padding: 0.9rem 0; */
 }
 #mainNav .navbar-nav .nav-item:hover {
   color: fade(#fff, 80%);
@@ -10164,6 +10166,14 @@ body {
   outline: none;
   background-color: transparent;
 }
+
+@media (min-width: 600px) {
+  .nav-link .js-scroll-trigger {
+      font-size: 15px;
+      width: 100%;
+      color: red;
+    }
+  }
 @media (min-width: 992px) {
   #mainNav {
     padding-top: 0;
@@ -10178,7 +10188,7 @@ body {
   }
   #mainNav .nav-link {
     transition: none;
-    padding: 2rem 1.5rem;
+    padding: 1rem 1.5rem;
     color: rgba(255, 255, 255, 0.5);
   }
   #mainNav .nav-link:hover {
@@ -10222,12 +10232,15 @@ body {
 }
 
 .masthead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100vh;
   min-height: 35rem;
   padding: 15rem 0;
-  background:linear-gradient(#000000, #457b9d), url("../img/bg-masthead.jpg");
+  background: linear-gradient(to bottom, #000, #457b9d, transparent 85%), url("../img/bg-masthead.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
