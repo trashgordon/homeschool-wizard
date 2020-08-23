@@ -1,14 +1,20 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
-const scheduleRouter = require('./routes/schedule.route');
 const mongoose = require('mongoose');
+const passportSetup = require('./passport-setup');
 const path = require('path');
+
+// Routers
+const authRouter = require('./routes/auth.route');
+const scheduleRouter = require('./routes/schedule.route');
+const toDoRouter = require('./routes/toDo.route');
 
 // Initialize our Express server
 const app = express();
 
 // Require our environment variables
 require('dotenv').config();
+require('./passport-setup.js');
 
 // Connect to MongoDB database
 mongoose
@@ -25,16 +31,16 @@ mongoose
   })
 
 // Middleware
-app.use(express.static(__dirname + '/public/'));
+app.use(express.static('public'));
+app.use('/assets', express.static(__dirname + 'public/assets'))
 app.use(expressLayouts);
-app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
+app.set('view engine', 'ejs');
 
 // Routes
+app.use('/auth', authRouter);
 app.use('/schedule', scheduleRouter);
-app.use('/login', require('./routes/login.route'));
-app.use('/register', require('./routes/register.route'));
-app.use('/todo', require('./routes/toDo.route'));
+app.use('/todo', toDoRouter);
 
 const PORT = process.env.PORT || 3000;
 

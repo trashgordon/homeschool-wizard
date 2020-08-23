@@ -1,30 +1,9 @@
-<div class="">
-  <h1 class=""><i class=""></i>  Login</h1>
+<%- include('./partials/nav') %>
 
-  <form action="/users/login" method="POST">
-    <div class="">
-      <label for="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        class="form-control"
-        placeholder="Enter Email"
-      />
-    </div>
-    <div class="">
-      <label for="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        class="form-control"
-        placeholder="Enter Password"
-      />
-    </div>
-    <button type="submit" class="">Login</button>
-  </form>
-  <p class="">
-    No Account? <a href="/users/register">Register</a>
-  </p>
-</div>
+<header>
+  <h1>Login using...</h1>
+</header>
+<main>
+  <a class="google-btn" href="/auth/google">Google+</a>
+</main>
+
