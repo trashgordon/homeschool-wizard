@@ -1,0 +1,36 @@
+#nav-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+}
+
+#menu-btn {
+  position: absolute;
+  right: 1vh;
+  margin-left: auto;
+}
+
+#nav-container #logo {
+  height: 75px;
+  margin: 0 auto;
+}
+
+#nav-row-1 {
+  display:flex;
+}
+
+#nav-row-2 {
+  margin: 0 auto;
+}
+
+.nav-item {
+  font-size: 15px;
+  text-align: center;
+}
+
+a.navbar-brand {
+  display: flex;
+  width: 100%;
+}
+
