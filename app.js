@@ -1,20 +1,20 @@
+const cookieSession = require('cookie-session');
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
-const passportSetup = require('./passport-setup');
-const path = require('path');
 
 // Routers
 const authRouter = require('./routes/auth.route');
 const scheduleRouter = require('./routes/schedule.route');
 const toDoRouter = require('./routes/toDo.route');
+const passport = require('passport');
 
 // Initialize our Express server
 const app = express();
 
 // Require our environment variables
 require('dotenv').config();
-require('./passport-setup.js');
+require('./passport-setup');
 
 // Connect to MongoDB database
 mongoose
@@ -31,6 +31,16 @@ mongoose
   })
 
 // Middleware
+
+app.use(cookieSession({
+  maxAge: 24 * 60 * 60 * 1000,
+  keys: [ process.env.cookieKey ]
+}));
+
+// Initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(express.static('public'));
 app.use('/assets', express.static(__dirname + 'public/assets'))
 app.use(expressLayouts);
