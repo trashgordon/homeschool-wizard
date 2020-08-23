@@ -1,11 +1,14 @@
+const auth = require('../middleware/auth');
 const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
 
 const Event = require('../models/event.model');
 
+
+
 // Get all events
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
   const events = await Event.find().sort({startTime : 1});
   res.render('schedule', {events: events});
 });
