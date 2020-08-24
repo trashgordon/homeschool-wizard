@@ -4,17 +4,17 @@
   <div id="schedule-content">
     <% if (events.length > 0) {
       function tConvert (time) {
-        // Check correct time format and split into components
         time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
       
-        if (time.length > 1) { // If time format correct
-          time = time.slice (1);  // Remove full string match value
-          time[5] = +time[0] < 12 ? ' AM' : ' PM'; // Set AM/PM
-          time[0] = +time[0] % 12 || 12; // Adjust hours
+        if (time.length > 1) {
+          time = time.slice (1);
+          time[5] = +time[0] < 12 ? ' AM' : ' PM';
+          time[0] = +time[0] % 12 || 12;
         }
-        return time.join (''); // return adjusted time or original string
+        return time.join ('');
       }
       events.forEach(event => { 
+        // Converting time format from 24 hr to 12 hr
         const startTime = tConvert(event.startTime);
         const endTime = tConvert(event.endTime);
       %>
@@ -61,11 +61,12 @@
       <% } %>
 
     <%- include('partials/addEvent.ejs') %>
-    <!-- -->
-    <div id="schedule-btn-section"> 
+
+    <div id="btn-add-event-wrapper"> 
       <button class="btn btn-primary" onclick="showForm()" id="btn-add-event" type="text">Add Event</button>
     </div>
   </div> <!-- schedule-content -->
+
   <%- include('partials/footer') %>
 
 </div> <!-- schedule-container -->

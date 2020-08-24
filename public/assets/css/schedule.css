@@ -1,7 +1,7 @@
 /* Wrapper for page */
 #schedule-container {
-  margin-top: 15vh;
-  height: 100vh;
+  margin-top: 10rem;
+  height: 100rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -9,20 +9,22 @@
 
 /* Wrapper for each event */
 .event-container {
-  margin-bottom: 2vh;
+  margin-bottom: 2rem;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   position: relative;
-  min-height: 10vh;
+  min-height: 10rem;
   color: white;
   border: white;
   background-color: black;
   border-width: thin;
   text-align: center;
   border-style: inset;
-  font-size: 1.5vh;
-  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.5rem;
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 /* Contains start time and event title */
@@ -32,9 +34,9 @@
 }
 .event-title {
   color: lightskyblue;
-  font-size: 1.25vh;
-  line-height: 1.5vh;
-  padding: 1vh 1vh;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  padding: 1rem 1rem;
   text-align: left;
   text-transform: uppercase;
   margin-block-start: 0;
@@ -44,12 +46,12 @@
 }
 .event-startTime {
   width: 15%;
-  margin: 0 1vh;
-  min-width: 7vh;
+  margin: 0 1rem;
+  min-width: 7rem;
   text-align: left;
-  font-size: 1vh;
-  line-height: 1.5vh;
-  padding: 1vh 0 0 1vh;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 1rem 0 0 1rem;
   margin-block-start: 0;
   margin-block-end: 0;
   margin-inline-start: 0;
@@ -60,23 +62,23 @@
 .event-middle-row {
   display: flex;
   flex-direction: row;
-  margin-bottom: 0.5vh;
+  margin-bottom: 0.5rem;
 }
 .event-endTime {
   width: 15%;
-  margin: 0 1vh;
-  min-width: 7vh;
+  margin: 0 1rem;
+  min-width: 7rem;
   text-align: left;
-  font-size: 1vh;
-  padding: 0 0 0 1vh;
+  font-size: 1rem;
+  padding: 0 0 0 1rem;
   margin-block-start: 0;
   margin-block-end: 0;
   margin-inline-start: 0;
   margin-inline-end: 0;
 }
 .event-notes {
-  font-size: 1vh;
-  padding: 0 1vh;
+  font-size: 1rem;
+  padding: 0 1rem;
   text-align: justify;
   margin-block-start: 0;
   margin-block-end: 0;
@@ -89,24 +91,25 @@
 .event-bottom-row {
   display: flex;
   flex-direction: row;
-  margin-bottom: 1vh;
-  padding-top: 1vh;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
 }
 .event-subject {
   color: white;
   text-transform: uppercase;
-  font-size: 1vh;
+  font-size: 1rem;
   margin: 0;
   font-family: sans-serif;
-  padding: 0 0 0 1vh;
+  padding: 0 0 0 1rem;
   text-align: left;
   position: absolute;
-  bottom: .5vh;
+  bottom: .5rem;
 }
 /* Styling for "event-subject" icons */
-.fa-paint-brush, .fa-flask, .fa-percent, .fa-walking, .fa-book, .fa-utensils, .fa-monument {
+.fa-paint-brush, .fa-flask, .fa-percent, .fa-walking,
+.fa-book, .fa-utensils, .fa-monument {
   color: lightskyblue;
-  margin-right: 1vh;
+  margin-right: 1rem;
 }
 
 /* No events to display */
@@ -114,11 +117,11 @@ h1.no-events {
   text-align: center;
   color: #777;
   text-transform: uppercase;
-  font-size: 1.5vh;
+  font-size: 1.5rem;
 }
 p.no-events {
-  margin-top: 3vh;
-  font-size: 1vh;
+  margin-top: 3rem;
+  font-size: 1rem;
   text-align: center;
   color: white;
   text-transform: uppercase;
@@ -149,24 +152,42 @@ div#add-event-time-row {
   width: 100%;
   margin-bottom: 1em;
 }
+
+/* Styling form inputs */
+form#form-add-event label {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: inherit;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+form#form-add-event select {
+  background-color: #111;
+  color: white;
+  text-align-last: center;
+  margin: 0 2rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
 form#form-add-event input {
   min-width: 150px;
   background-color: #111;
-  margin-bottom: 1vh;
+  margin-bottom: 1rem;
   color: white;
   border: none;
   border-radius: 5px;
-  padding-left: 1vh;
-  font-size: 1.5vh;
+  padding-left: 1rem;
+  font-size: 1.5rem;
 }
 form#form-add-event input[type=submit] {
-  margin-top: 2vh;
+  margin-top: 2rem;
   width: 150px;
   text-transform: uppercase;
   background-color: lightskyblue;
   color: black;
   padding: 0;
-  height: 3vh;
+  height: 3rem;
   border-radius: 3px;
   font-size: 1rem;
   font-family: inherit;
@@ -177,64 +198,13 @@ form#form-add-event input[type=submit]:hover {
   transition: color 0.2s ease;
   color:white;
 }
-form#form-add-event select {
-  background-color: #111;
-  color: white;
-  text-align-last: center;
-  margin: 0 2vh;
-  text-transform: uppercase;
-  font-size: 1.5vh;
-}
-
-#add-event-time-row input {
- width: 25%;
- min-width: 150px;
-}
-
-#add-event-right-col input {
-  padding-left: 1vh;
-}
-
-form#form-add-event label {
-  color: white;
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-family: inherit;
-  text-align: center;
-  margin-bottom: 1vh;
-}
-
-div#form-add-event-btns {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-#schedule-btn-section{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-#btn-add-event {
-  padding: 0;
-  background-color: lightskyblue;
-  border-radius: 3px;
-  font-family: inherit;
-  margin: 1vh auto;
-  font-size: 1rem;
-  width: 25vh;
-  height: 3vh;
-}
-
 input[type=button]#btn-hide-form {
-  margin-top: 2vh;
+  margin-top: 2rem;
   width: 150px;
   text-transform: uppercase;
   background-color: rgb(184, 196, 209);
   color: black;
-  height: 3vh;
+  height: 3rem;
   border-radius: 3px;
   font-size: 1rem;
   font-family: inherit;
@@ -242,8 +212,34 @@ input[type=button]#btn-hide-form {
   letter-spacing: 0.1rem;
   padding: 0;
 }
-
 input[type=button]#btn-hide-form:hover {
   transition: color 0.2s ease;
   color: white;
+}
+div#add-event-time-row input {
+  width: 25%;
+  min-width: 150px;
+ }
+div#form-add-event-btns {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Add Event button */
+div#btn-add-event-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+button#btn-add-event {
+  padding: 0;
+  background-color: lightskyblue;
+  border-radius: 3px;
+  font-family: inherit;
+  margin: 1rem auto;
+  font-size: 1rem;
+  width: 25rem;
+  height: 3rem;
 }
