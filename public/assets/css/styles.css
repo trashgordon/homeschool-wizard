@@ -377,7 +377,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size: 1.5rem;
+  font-size: .1.5rem;
 }
 
 h5, .h5 {
@@ -429,7 +429,9 @@ small,
   font-size: 80%;
   font-weight: 400;
 }
-
+.small-text-black-50{
+  font-size: 1rem;
+}
 mark,
 .mark {
   padding: 0.2em;
