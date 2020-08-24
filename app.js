@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const authRouter = require('./routes/auth.route');
 const scheduleRouter = require('./routes/schedule.route');
 const toDoRouter = require('./routes/toDo.route');
+const videosRouter = require('./routes/videos.route');
 const passport = require('passport');
 
 // Initialize our Express server
@@ -51,6 +52,7 @@ app.set('view engine', 'ejs');
 app.use('/auth', authRouter);
 app.use('/schedule', scheduleRouter);
 app.use('/todo', toDoRouter);
+app.use('/videos', videosRouter);
 
 const PORT = process.env.PORT || 3000;
 

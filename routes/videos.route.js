@@ -1,44 +1,20 @@
+const auth = require('../middleware/auth');
 const express = require('express');
-const mongoose = require('mongoose');
+const { google } = require('googleapis');
 const router = express.Router();
+require('dotenv').config();
 
-const Event = require('../models/event.model');
-
-// Get all events
-router.get('/', async (req, res) => {
-  const events = await Event.find().sort({startTime : 1});
-  res.render('schedule', {events: events});
-});
-
-// Create an event
-router.post('/api/events', (req, res, next) => {
-  const event = new Event({
-    _id: new mongoose.Types.ObjectId(),
-    title: req.body.title,
-    startTime: req.body.startTime,
-    endTime: req.body.endTime,
-    notes: req.body.notes,
-    tag: req.body.tag
-  });
-
-  event
-    .save()
-    .then(result => {
-      console.log(result);
-    })
-    .catch(err => console.log(err));
-
-  res.redirect('/schedule');
-});
-
-// Delete an event
-router.delete('/api/events/:id', (req, res) => {
-  Event
-    .find({ _id: req.params.item })
-    .deleteOne((err, data) => {
-      if (err) throw err;
-      res.json(data);
-    });
+// Get all videos
+router.get('/', auth, async (req, res) => {
+  google.youtube('v3').search.list({
+    key: process.env.apiKey,
+    part: 'snippet',
+    q: 'homeschool',
+  }).then((response) => {
+    const user = req.user;
+    const videos = response.data;
+    res.render('videos', { videos: videos, user: user });
+    }).catch((err) => console.log(err));
 });
 
 module.exports = router;
