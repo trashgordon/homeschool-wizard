@@ -8,7 +8,7 @@ body {font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Robo
 .month {
     padding: 70px 25px;
     width: 100%;
-    background: #284b63;
+    background: linear-gradient(#000000, #457b9d);
 }
 .navbar {
   position: relative;
