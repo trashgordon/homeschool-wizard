@@ -1,3 +1,4 @@
+const auth = require('../middleware/auth');
 const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
@@ -5,9 +6,10 @@ const router = express.Router();
 const ToDo = require('../models/toDo.model');
 
 // serve toDo page
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
+  const user = req.user;
   const todos = await ToDo.find();
-  res.render('toDo', { todos: todos });
+  res.render('toDo', { todos: todos, user: user });
 });
 
 // create a new todo

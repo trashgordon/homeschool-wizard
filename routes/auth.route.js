@@ -1,10 +1,16 @@
+const auth = require('../middleware/auth');
 const express = require('express');
 const passport = require('passport');
 const router = express.Router();
 
 // auth login
 router.get('/login', (req, res) => {
-  res.render('login');
+  const user = req.user;
+  if (user) {
+    res.redirect('/schedule');
+  } else {
+    res.render('login');
+  }
 });
 
 // auth logout

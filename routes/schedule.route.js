@@ -9,8 +9,9 @@ const Event = require('../models/event.model');
 
 // Get all events
 router.get('/', auth, async (req, res) => {
+  const user = req.user;
   const events = await Event.find().sort({startTime : 1});
-  res.render('schedule', {events: events});
+  res.render('schedule', { events: events, user: user });
 });
 
 // Create an event
@@ -27,7 +28,6 @@ router.post('/api/events', (req, res, next) => {
   event
     .save()
     .then(result => {
-      console.log(result);
     })
     .catch(err => console.log(err));
 
