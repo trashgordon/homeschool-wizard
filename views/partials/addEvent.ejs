@@ -1,25 +1,26 @@
-<form id="add-event" action="/schedule/api/events" method="POST">
-  <div id="add-event-col-container">
-    <div id="add-event-left-col">
-      <label for="startTime">From:</label>
-      <input name="startTime" type="time" placeholder="">
-      <label for="endTime">To:</label>
-      <input name="endTime" type="time" placeholder=""">
+<form id="form-add-event" action="/schedule/api/events" method="POST">
+  <div id="form-add-event-cols">
+    <div id="add-event-top-row">
+      <input name="title" type="text" placeholder="TITLE">
+      <input name="notes" type="text" placeholder="DESCRIPTION">
     </div>
-    <div id="add-event-right-col">
-      <input name="title" type="text" placeholder="Add title">
-      <input name="notes" type="text" placeholder="Add notes">
-      <select name="tag" placeholder="">
-        <option value="art">Art</option>
-        <option value="break">Break</option>
-        <option value="literature">Literature</option>
-        <option value="lunch">Lunch</option>
-        <option value="math">Math</option>
-        <option value="science">Science</option>
-      </select>
+    <div id="add-event-time-row">
+      <input id="startTime" name="startTime" type="time">
+      <input id="endTime" name="endTime" type="time">
     </div>
   </div>
-  <input type="submit" value="Add Event">
+  <label for="tag">Select Subject</label>
+  <select name="tag">
+    <option value="art">Art</option>
+    <option value="break">Break</option>
+    <option value="break">History</option>
+    <option value="literature">Literature</option>
+    <option value="lunch">Lunch</option>
+    <option value="math">Math</option>
+    <option value="science">Science</option>
+  </select>
+  <div id="form-add-event-btns">
+    <input type="button" id="btn-hide-form" onclick="cancelForm()" value="Cancel">
+    <input type="submit" value="Confirm">
+  </div>
 </form>
-
-<button id="btn-hide-form" onclick="cancelForm()">Cancel</button>

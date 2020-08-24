@@ -75,7 +75,7 @@ body {
      outline: none;
  }
 
- .todo .container {
+ .todo-container {
      width: 300px;
      margin: 165px auto;
     color: inherit;

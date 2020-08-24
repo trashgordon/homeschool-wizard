@@ -2,75 +2,69 @@
 
 <div id="schedule-container">
   <div id="schedule-content">
-    <% events.forEach(event => { %>
-      <% switch (event.tag) {
-        case "art": %>
-          <div class="event-container event-class">
-            <div class="event-col-container">
-              <div class="event-left-column">
-              <p class="event-header"><i class="fa fa-paint-brush"></i> <%= event.tag %></p>
-          
-          <% break
-        case "break": %>
-          <div class="event-container event-break">
-            <div class="event-col-container">
-              <div class="event-left-column">
-              <p class="event-header"><i class="fa fa-walking"></i> <%= event.tag %></p>
-          
-          <% break
-        case "history": %>
-          <div class="event-container event-class">
-            <div class="event-col-container">
-              <div class="event-left-column">
-              <p class="event-header"><i class="fa fa-monument"></i> <%= event.tag %></p>
-          
-          <% break
-        case "literature": %>
-          <div class="event-container event-class">
-            <div class="event-col-container">
-              <div class="event-left-column">
-              <p class="event-header"><i class="fa fa-book"></i> <%= event.tag %></p>
-          
-          <% break
-        case "lunch": %>
-          <div class="event-container event-lunch">
-            <div class="event-col-container">
-              <div class="event-left-column">
-              <p class="event-header"><i class="fa fa-utensils"></i> <%= event.tag %></p>
-          
-          <% break
-        case "math": %>
-          <div class="event-container event-class">
-            <div class="event-col-container">
-              <div class="event-left-column">
-              <p class="event-header"><i class="fa fa-percent"></i> <%= event.tag %></p>
-          
-          <% break
-        case "science": %>
-          <div class="event-container event-class">
-            <div class="event-col-container">
-              <div class="event-left-column">
-                p class="event-header"><i class="fa fa-flask"></i> <%= event.tag %></p>
-      <% } %>
-                <p class="event-startTime"><%= event.startTime %></p>
-                <p class="event-endTime"><%= event.endTime %></p>
-              </div>
-              <div class="event-right-column">
-                <p class="event-title"><%= event.title %></p>
-                <% if (event.notes) { %>
-                <p class="event-notes"><%= event.notes %></p>
-                <% } %>
-              </div>
-          </div> <!-- event-col-container -->
+    <% if (events.length > 0) {
+      function tConvert (time) {
+        // Check correct time format and split into components
+        time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+      
+        if (time.length > 1) { // If time format correct
+          time = time.slice (1);  // Remove full string match value
+          time[5] = +time[0] < 12 ? ' AM' : ' PM'; // Set AM/PM
+          time[0] = +time[0] % 12 || 12; // Adjust hours
+        }
+        return time.join (''); // return adjusted time or original string
+      }
+      events.forEach(event => { 
+        const startTime = tConvert(event.startTime);
+        const endTime = tConvert(event.endTime);
+      %>
+        <div class="event-container event-class">
+          <div class="event-top-row">
+            <p class="event-startTime"><%= startTime %></p>
+            <p class="event-title"><%= event.title %></p>
+          </div>
+          <div class="event-middle-row">
+            <p class="event-endTime"><%= endTime %></p>
+            <p class="event-notes"><%= event.notes %></p>
+          </div>
+          <div class="event-bottom-row">
+            <p class="event-subject">
+              <% switch (event.tag) {
+                case "art": %>
+                    <i class="fa fa-paint-brush"></i>
+                  <% break
+                case "break": %>
+                    <i class="fa fa-walking"></i>
+                  <% break
+                case "history": %>
+                    <i class="fa fa-monument"></i>
+                  <% break
+                case "literature": %>
+                    <i class="fa fa-book event-subject-i"></i>
+                  <% break
+                case "lunch": %>
+                    <i class="fa fa-utensils"></i>
+                  <% break
+                case "math": %>
+                    <i class="fa fa-percent"></i>
+                  <% break
+                case "science": %>
+                    <i class="fa fa-flask"></i>
+              <% } %>
+            <%= event.tag %></p> <!-- event-subject -->
+          </div> <!-- event-bottom-row -->
         </div> <!-- event-container -->
-    <% }) %>
-
+      <% }) %>
+      <% } else { %>
+        <h1 class="no-events">No events to display</h1>
+        <p class="no-events">Click below to get started!</p>
+      <% } %>
 
     <%- include('partials/addEvent.ejs') %>
-    <!-- <div class = "addButtonSection"> -->
-
-    <button class="btn btn-primary" onclick="showForm()" id="btn-add-event"
-    type="text">Add Event</button>
+    <!-- -->
+    <div id="schedule-btn-section"> 
+      <button class="btn btn-primary" onclick="showForm()" id="btn-add-event" type="text">Add Event</button>
+    </div>
   </div> <!-- schedule-content -->
   <%- include('partials/footer') %>
 
@@ -78,21 +72,19 @@
 
 <script>
   (function hideForm() {
-    $('#add-event').hide();
+    $('#form-add-event').hide();
     $('#btn-hide-form').hide();    
   })();
 
   function showForm() {
-    $('#add-event').show();
+    $('#form-add-event').show();
+    $('#btn-add-event').hide();
     $('#btn-hide-form').show();
   }
 
   function cancelForm() {
-    $('#add-event').hide();
-    $('#btn-hide-form').hide();    
-  }
-
-  function showSlideOutButtons() {
-    $(".btn-slideOut").show();
+    $('#form-add-event').hide();
+    $('#btn-hide-form').hide();  
+    $('#btn-add-event').show();  
   }
 </script>
