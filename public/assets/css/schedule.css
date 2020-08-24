@@ -1,7 +1,8 @@
 /* Wrapper for page */
 #schedule-container {
-  margin-top: 10rem;
-  height: 100rem;
+  margin: 10rem auto 0;
+  width: 90%;
+  max-width: 750px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -230,16 +231,14 @@ div#btn-add-event-wrapper{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 button#btn-add-event {
   padding: 0;
   background-color: lightskyblue;
   border-radius: 3px;
   font-family: inherit;
-  margin: 1rem auto;
+  margin: 0 auto 2rem;
   font-size: 1rem;
-  width: 25rem;
+  width: 10rem;
   height: 3rem;
 }
