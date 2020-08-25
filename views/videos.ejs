@@ -3,7 +3,19 @@
 <div id="videos-container">
   <div id="videos-content">
     <% videos.items.forEach((item) => { %>
-      <div class="video-container">
+
+
+
+      <title>Vidoe Player</title>
+<div class = "container">
+    <div class = "c-video">
+        <video class = "video" src = "" controls></video>
+
+
+
+
+
+
         <div class="video-left-col">
           <a href="https://www.youtube.com/watch?v=<%=item.id.videoId%>">
             <img class="video-thumbnail" src="<%= item.snippet.thumbnails.medium.url %>">
@@ -19,3 +31,4 @@
 </div> <!-- videos-container -->
 
 <%- include('partials/footer') %>
+
