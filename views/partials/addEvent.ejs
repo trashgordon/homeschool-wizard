@@ -1,0 +1,26 @@
+<form id="form-add-event" action="/schedule/api/events" method="POST">
+  <div id="form-add-event-cols">
+    <div id="add-event-top-row">
+      <input name="title" type="text" placeholder="Title">
+      <input name="notes" type="text" placeholder="Description">
+    </div>
+    <div id="add-event-time-row">
+      <input id="startTime" name="startTime" type="time">
+      <input id="endTime" name="endTime" type="time">
+    </div>
+  </div>
+  <label for="tag">Select Subject</label>
+  <select name="tag">
+    <option value="art">Art</option>
+    <option value="break">Break</option>
+    <option value="break">History</option>
+    <option value="literature">Literature</option>
+    <option value="lunch">Lunch</option>
+    <option value="math">Math</option>
+    <option value="science">Science</option>
+  </select>
+  <div id="form-add-event-btns">
+    <input type="button" id="btn-hide-form" onclick="cancelForm()" value="Cancel">
+    <input type="submit" value="Confirm">
+  </div>
+</form>

@@ -1,30 +1,36 @@
-<div class="">
-  <h1 class=""><i class=""></i>  Login</h1>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <div id="nav-container">
+      <div id="nav-row-1">
+          <a class="navbar-brand js-scroll-trigger" href="/"><img
+          id="logo" src="/assets/img/witch-hat-logo.png" alt="logo"></a>
+          <button id="menu-btn" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fas fa-bars"></i>
+          </button>
+      </div>
+      <div id="nav-row-2">
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Settings</a></a></li>
+                  <li class="nav-item"><a class="nav-link js-scroll-trigger"
+                  href="#signup">Contact</a></li>
+                  <li class="nav-item"><a class="nav-link js-scroll-trigger"
+                  href="/auth/login">Login</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</nav>
 
-  <form action="/users/login" method="POST">
-    <div class="">
-      <label for="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        class="form-control"
-        placeholder="Enter Email"
-      />
-    </div>
-    <div class="">
-      <label for="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        class="form-control"
-        placeholder="Enter Password"
-      />
-    </div>
-    <button type="submit" class="">Login</button>
-  </form>
-  <p class="">
-    No Account? <a href="/users/register">Register</a>
-  </p>
+<div id="login-container">
+  <div id="login-content">
+    <h1>Login using...</h1>
+    <a class="google-btn" href="/auth/google">Google+</a>
+  </div>
+
+  <%- include('./partials/footer') %>
 </div>
+
+
+
+

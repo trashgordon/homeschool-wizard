@@ -28,6 +28,7 @@
   });
 </script>
 
+<<<<<<< HEAD
 <%- include('partials/nav.ejs')%>
 <<<<<<< HEAD
    <div class = "toDoContainer">
@@ -43,9 +44,23 @@
   </div>
 =======
 >>>>>>> 827806bf49fd0f078a332b0ba50f9aaa1871a818
+=======
+<%- include('partials/nav.ejs') %>
 
-<div class="toDoContainer">
-  <!-- <h1>Weekly To-Do <i class="fa fa-plus"></i></h1>
+<div class="todo-container">
+  <h1 class="todo">Weekly To-Do <i class="fa fa-plus"></i></h1> <input type="text" placeholder="Add New Activity">
+  <ul class="todo">
+      <li class="todo"><span class="todo"><i class="fa fa-minus"></i></span> Math Worksheet</li>
+      <li class="todo"><span class="todo"><i class="fa fa-minus"></i></span> Science Video</li>
+      <li class="todo"><span class="todo"><i class="fa fa-minus"></i></span> Arts and Crafts</li>
+      <li class="todo"><span class="todo"><i class="fa fa-minus"></i></span> Nature Walk</li>
+      <li class="todo"><span class="todo"><i class="fa fa-minus"></i></span> Listen to a Podcast</li>
+  </ul>
+</div>
+>>>>>>> ad2ee16e4580a188ed123fd5c4bdd51ac1acd537
+
+<!-- <div class="toDoContainer">
+  <h1>Weekly To-Do <i class="fa fa-plus"></i></h1>
   <form id="add-todo" action="/toDo/api/todos" method="POST">
       <input type="text" placeholder="Add New Activity">
   </form>
@@ -53,6 +68,7 @@
       <% todos.forEach(todo => { %>
       <li><span><i class="fa fa-trash"></i></span> <%= todo.note %></li>
       <% }) %>
+<<<<<<< HEAD
   </ul> -->
 
 
@@ -66,3 +82,7 @@
   </ul>
 </div> %>
 
+=======
+  </ul>
+</div> -->
+>>>>>>> ad2ee16e4580a188ed123fd5c4bdd51ac1acd537

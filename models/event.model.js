@@ -1,7 +1,7 @@
 const Joi = require('joi');
 const mongoose = require('mongoose');
 
-const TaskSchema = new mongoose.Schema({
+const EventSchema = new mongoose.Schema({
   _id: {
     type: mongoose.Schema.Types.ObjectId
   },
@@ -22,6 +22,6 @@ const TaskSchema = new mongoose.Schema({
   }
 });
 
-const Task = mongoose.model('Task', TaskSchema);
+const Event = mongoose.model('Event', EventSchema);
 
-module.exports = Task;
+module.exports = Event;

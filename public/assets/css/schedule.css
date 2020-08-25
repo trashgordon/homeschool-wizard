@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .schedule-h1 {
     color: white;
     margin: 0;
@@ -17,52 +18,257 @@
   line-height: inherit;
   -webkit-appearance: button;
   margin:auto;
-  font-size: 1rem;
-
-}
-#btn-add-event {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  border-radius: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  -webkit-appearance: button;
-  margin: auto;
-  font-size: 1rem;
-
-}
-
-.addButtonSection{
-padding-top: 10px;
-padding-bottom: 10px;
-}
-
-/* .container {
-  background-color: black;
-} */
-
-.task-container {
+=======
+/* Wrapper for page */
+#schedule-container {
+  margin: 10rem auto 0;
+  width: 90%;
+  max-width: 750px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap-reverse;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Wrapper for each event */
+.event-container {
+  margin-bottom: 2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 10rem;
   color: white;
   border: white;
   background-color: black;
   border-width: thin;
   text-align: center;
   border-style: inset;
-  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.5rem;
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Contains start time and event title */
+.event-top-row {
+  display: flex;
+  flex-direction: row;
+}
+.event-title {
+  color: lightskyblue;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  padding: 1rem 1rem;
+  text-align: left;
+  text-transform: uppercase;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+.event-startTime {
+  width: 15%;
+  margin: 0 1rem;
+  min-width: 7rem;
+  text-align: left;
+>>>>>>> ad2ee16e4580a188ed123fd5c4bdd51ac1acd537
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 1rem 0 0 1rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+ /* Contains end time and event notes */
+.event-middle-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+}
+.event-endTime {
+  width: 15%;
+  margin: 0 1rem;
+  min-width: 7rem;
+  text-align: left;
+  font-size: 1rem;
+  padding: 0 0 0 1rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+.event-notes {
+  font-size: 1rem;
+  padding: 0 1rem;
+  text-align: justify;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  color: #ccc;
+}
+
+/* Contains the event subject (math, history, etc.) */
+.event-bottom-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+}
+.event-subject {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin: 0;
+  font-family: sans-serif;
+  padding: 0 0 0 1rem;
+  text-align: left;
+  position: absolute;
+  bottom: .5rem;
+}
+/* Styling for "event-subject" icons */
+.fa-paint-brush, .fa-flask, .fa-percent, .fa-walking,
+.fa-book, .fa-utensils, .fa-monument {
+  color: lightskyblue;
+  margin-right: 1rem;
+}
+
+/* No events to display */
+h1.no-events {
+  text-align: center;
+  color: #777;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+p.no-events {
+  margin-top: 3rem;
+  font-size: 1rem;
+  text-align: center;
+  color: white;
   text-transform: uppercase;
 }
 
-.left-column {
+/* Styling for pop-up Add Event form */
+form#form-add-event {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+  background-color: black;
+}
+div#form-add-event-cols {
+  display: flex;
+  flex-direction: column;
+}
+div#add-event-top-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
   padding: 1em;
-  width: 30%;
+}
+div#add-event-time-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 1em;
 }
 
+/* Styling form inputs */
+form#form-add-event label {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: inherit;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+form#form-add-event select {
+  background-color: #111;
+  color: white;
+  text-align-last: center;
+  margin: 0 2rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+form#form-add-event input {
+  min-width: 150px;
+  background-color: #111;
+  margin-bottom: 1rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+}
+form#form-add-event input[type=submit] {
+  margin-top: 2rem;
+  width: 150px;
+  text-transform: uppercase;
+  background-color: lightskyblue;
+  color: black;
+  padding: 0;
+  height: 3rem;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: none;
+  letter-spacing: 0.1rem;
+}
+form#form-add-event input[type=submit]:hover {
+  transition: color 0.2s ease;
+  color:white;
+}
+input[type=button]#btn-hide-form {
+  margin-top: 2rem;
+  width: 150px;
+  text-transform: uppercase;
+  background-color: rgb(184, 196, 209);
+  color: black;
+  height: 3rem;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: none;
+  letter-spacing: 0.1rem;
+  padding: 0;
+}
+input[type=button]#btn-hide-form:hover {
+  transition: color 0.2s ease;
+  color: white;
+}
+div#add-event-time-row input {
+  width: 25%;
+  min-width: 150px;
+ }
+div#form-add-event-btns {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+<<<<<<< HEAD
 .right-column {
   width: 70%;
   padding: 1em;
 }
 
+=======
+/* Add Event button */
+div#btn-add-event-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+button#btn-add-event {
+  padding: 0;
+  background-color: lightskyblue;
+  border-radius: 3px;
+  font-family: inherit;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+  width: 10rem;
+  height: 3rem;
+}
+>>>>>>> ad2ee16e4580a188ed123fd5c4bdd51ac1acd537

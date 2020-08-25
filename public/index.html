@@ -14,23 +14,29 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="assets/css/styles.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
+        <link rel="stylesheet" href="assets/css/nav.css" type="text/css" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">HOMESCHOOL WIZARD</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About Our App</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Account Settings</a></a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact Us</a></li>
-                    </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div id="nav-container">
+                <div id="nav-row-1">
+                    <a class="navbar-brand js-scroll-trigger" href="/"><img
+                    id="logo" src="assets/img/witch-hat-logo.png" alt="logo"></a>
+                    <button id="menu-btn" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <div id="nav-row-2">
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Settings</a></a></li>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/auth/login">Login</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -40,7 +46,7 @@
                 <div class="mx-auto text-center">
                   <i class="far fa-hat-wizard"></i>
                     <h1 class="bigHeader">HOMESCHOOL WIZARD</h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Create a unique customized flow to your student's day, with to a few tricks from up the sleeve.</h2>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Create a unique customized flow to your student's day, with a few tricks from up the sleeve.</h2>
                     <a class="btn btn-primary js-scroll-trigger" href="#about">Explore</a>
                 </div>
             </div>
@@ -67,7 +73,7 @@
                     <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/library-bookshelf2.jpg" alt="" /></div>
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
-                            <h4>Create Inspired Daily Tasks and Activites</h4>
+                            <h4>Create Inspired Daily Tasks and Activities</h4>
                             <p class="text-black-50 mb-0">Make custom reminders and prompts that keep the energy fluid and active, while getting things done.</p>
                         </div>
                     </div>
@@ -110,10 +116,10 @@
                 <div class="row">
                     <div class="col-md-10 col-lg-8 mx-auto text-center">
                         <i class=""></i>
-                        <h2 class="text-white mb-5">Get Started</h2></h2>
+                        <h2 class="text-white mb-5">Let the Magic Begin!</h2></h2>
                         <form class="form-inline d-flex">
                             <!-- <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="EMAIL" /> -->
-                            <button class="btn btn-primary mx-auto" type="submit">Make it so!</button>
+                            <button class="btn btn-primary mx-auto" type="submit">Sign Up</button>
                         </form>
                     </div>
                 </div>
@@ -129,7 +135,7 @@
                                 <i class="fas fa-map-marked-alt text-primary mb-2"></i>
                                 <h4 class="text-uppercase m-0">Located In</h4>
                                 <hr class="my-4" />
-                                <div class="small text-black-50">Salem, OR</div>
+                                <div class="small text-black-50">The Pacific NW</div>
                             </div>
                         </div>
                     </div>
@@ -137,9 +143,9 @@
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
                                 <i class="fas fa-envelope text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">contact</h4>
+                                <h4 class="text-uppercase m-0">Contact</h4>
                                 <hr class="my-4" />
-                                <div class="small text-black-50"><a href="#!">andrea.maye.jenkins@gmail.com</a></div>
+                                <div class="small-text-black-50"><a href="#!">andrea.maye.jenkins@gmail.com</a></div>
                             </div>
                         </div>
                     </div>
