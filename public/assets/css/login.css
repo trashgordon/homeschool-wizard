@@ -1,169 +1,80 @@
-:root {
-  --input-padding-x: 4.5rem;
-  --input-padding-y: .5rem;
+.wrap-input100 {
+    justify-content:center;
+    border-radius:60px;
+    padding:7px;
+}
+.limiter{
+    max-width: 50%;
+    padding:40px 40px 40px 40px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #fff;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    align-items:center;
+    font-weight:lighter;
+    justify-content:center;
+    display: flex;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+
 }
 
-body {
-  background: black;
-  background: linear-gradient(#000000, #457b9d);
-  text-align: center;
+.background{
+    margin-top:200px;
+    margin-bottom:200px;
+    background: linear-gradient(to bottom, #000, #457b9d);
+
+}
+.login100-form-title {
+    font-size:2.5rem;
+    font-weight:lighter;
+    color:#467370;
+    text-transform:uppercase;
+
 }
 
-#btn-submit{
-   color:#64a19d;
-}
-.card-signin {
-  border: 0;
-  border-radius: 1rem;
-  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+.text-right {
+    color:#467370;
+    font-size:1rem;
 }
 
-.card-signin .card-title {
-  margin-bottom: 3rem;
-  font-weight: 300;
+
+.container-login100-form-btn{
+  padding: 1rem 4.5rem;
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 70%;
   text-transform: uppercase;
-  font-size: 3.5rem;
-  color: #64a19d;
-  font-family:"Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
-   text-align: center;
-
-}
-
-.card-signin .card-body {
-  padding: 1.75rem;
-}
-
-.custom-control-label{
-    color:#64a19d;
-}
-.form-signin {
-  width: 100%;
-
-}
-
-.form-signin .btn {
-  font-size: 90%;
-  border-radius: 3rem;
-  letter-spacing: .1rem;
-  font-weight:lighter;
-  transition: all 0.2s;
-  font-family: Sans-serif;
-  color:black;
-  padding:10px;
-  margin-top:10px;
-
-
-
-
-}
-
-.form-label-group {
-  position: relative;
-  margin-bottom: 1rem;
- font-family: Sans-serif;
- text-align: center;
-
-}
-
-.form-label-group input {
-  height: auto;
-  border-radius: 2rem;
-
-}
-
-.form-label-group>input,
-.form-label-group>label {
-  padding: var(--input-padding-y) var(--input-padding-x);
-}
-
-.form-label-group>label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  margin-bottom: 0;
-  /* Override default `<label>` margin */
-  line-height: 1.5rem;
-  color:#64a19d;
-  border: 3.5px solid transparent;
-  border-radius: 2rem;
-  transition: all .1s ease-in-out;
-
-}
-
-.form-label-group input::-webkit-input-placeholder {
-  color: transparent;
-}
-
-.form-label-group input:-ms-input-placeholder {
-  color: transparent;
-}
-
-.form-label-group input::-ms-input-placeholder {
-  color: transparent;
-}
-
-.form-label-group input::-moz-placeholder {
-  color: transparent;
-}
-
-.form-label-group input::placeholder {
-  color: transparent;
-}
-
-.form-label-group input:not(:placeholder-shown) {
-  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
-  padding-bottom: calc(var(--input-padding-y) / 3);
-}
-
-.form-label-group input:not(:placeholder-shown)~label {
-  padding-top: calc(var(--input-padding-y) / 3);
-  padding-bottom: calc(var(--input-padding-y) / 3);
-  font-size: 14px;
-  color: #fff;
-}
-
-
-
-.btn-google {
-  color: black;
-  background-color: #64a19d;;
-}
-
-.btn-facebook {
-  color: black;
-  background-color:#64a19d;;
-}
-
-hr{
-    margin-top: 2rem;
-  margin-bottom: 2rem;
+  letter-spacing: 0.2rem;
   border: 0;
-  border-top: 2px solid rgba(0, 0, 0, 0.1);
+
 }
-/* Fallback for Edge
--------------------------------------------------- */
+.login100-form-btn{
 
-@supports (-ms-ime-align: auto) {
-  .form-label-group>label {
-    display: none;
-  }
-  .form-label-group input::-ms-input-placeholder {
-    color:black;
-  }
+  font-weight: 200;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color:black;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: .75rem;
+  line-height: 1rem;
+  border-radius: 0rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-/* Fallback for IE
--------------------------------------------------- */
-
-@media all and (-ms-high-contrast: none),
-(-ms-high-contrast: active) {
-  .form-label-group>label {
-    display: none;
-  }
-  .form-label-group input:-ms-input-placeholder {
-    color: #777;
-  }
+.logintxt1, .logintxt3, .logintxt2 {
+  text-transform: uppercase;
+  font-size:.75rem;
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight:400;
+    color:#467370;
+    font-size:.75rem;
 }
 
