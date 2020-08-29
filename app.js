@@ -25,17 +25,17 @@ mongoose
     useUnifiedTopology: true
   })
   .then(() => {
-    console.log(`[+] Connected to MongoDB at ${process.env.HOST}`);
+    console.log(`[+] Connected to MongoDB`);
   })
   .catch(err => {
-    console.log(`[-] Cannot connect to MongoDB at ${process.env.HOST}`);
+    console.log(`[-] Failed to connect to MongoDB: ${err}`);
   })
 
 // Middleware
 
 app.use(cookieSession({
   maxAge: 24 * 60 * 60 * 1000,
-  keys: [ process.env.cookieKey ]
+  keys: [process.env.COOKIE_KEY]
 }));
 
 // Initialize passport
@@ -56,5 +56,5 @@ app.use('/videos', videosRouter);
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, console.log(`[+] Express server listening on port ${PORT}`));
+app.listen(PORT, console.log(`[+] Server listening on port ${PORT}`));
 

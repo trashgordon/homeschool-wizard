@@ -18,51 +18,51 @@
         const startTime = tConvert(event.startTime);
         const endTime = tConvert(event.endTime);
       %>
-        <div class="event-container event-class">
-          <div class="event-top-row">
-            <p class="event-startTime"><%= startTime %></p>
-            <p class="event-title"><%= event.title %></p>
-          </div>
-          <div class="event-middle-row">
-            <p class="event-endTime"><%= endTime %></p>
-            <p class="event-notes"><%= event.notes %></p>
-          </div>
-          <div class="event-bottom-row">
-            <p class="event-subject">
-              <% switch (event.tag) {
+    <div class="event-container event-class">
+      <div class="event-top-row">
+        <p class="event-startTime"><%= startTime %></p>
+        <p class="event-title"><%= event.title %></p>
+      </div>
+      <div class="event-middle-row">
+        <p class="event-endTime"><%= endTime %></p>
+        <p class="event-notes"><%= event.notes %></p>
+      </div>
+      <div class="event-bottom-row">
+        <p class="event-subject">
+          <% switch (event.tag) {
                 case "art": %>
-                    <i class="fa fa-paint-brush"></i>
-                  <% break
+          <i class="fa fa-paint-brush"></i>
+          <% break
                 case "break": %>
-                    <i class="fa fa-walking"></i>
-                  <% break
+          <i class="fa fa-walking"></i>
+          <% break
                 case "history": %>
-                    <i class="fa fa-monument"></i>
-                  <% break
+          <i class="fa fa-monument"></i>
+          <% break
                 case "literature": %>
-                    <i class="fa fa-book event-subject-i"></i>
-                  <% break
+          <i class="fa fa-book event-subject-i"></i>
+          <% break
                 case "lunch": %>
-                    <i class="fa fa-utensils"></i>
-                  <% break
+          <i class="fa fa-utensils"></i>
+          <% break
                 case "math": %>
-                    <i class="fa fa-percent"></i>
-                  <% break
+          <i class="fa fa-percent"></i>
+          <% break
                 case "science": %>
-                    <i class="fa fa-flask"></i>
-              <% } %>
-            <%= event.tag %></p> <!-- event-subject -->
-          </div> <!-- event-bottom-row -->
-        </div> <!-- event-container -->
-      <% }) %>
-      <% } else { %>
-        <h1 class="no-events">No events to display</h1>
-        <p class="no-events">Click below to get started!</p>
-      <% } %>
+          <i class="fa fa-flask"></i>
+          <% } %>
+          <%= event.tag %></p> <!-- event-subject -->
+      </div> <!-- event-bottom-row -->
+    </div> <!-- event-container -->
+    <% }) %>
+    <% } else { %>
+    <h1 class="no-events">No events to display</h1>
+    <p class="no-events">Click below to get started!</p>
+    <% } %>
 
     <%- include('partials/addEvent.ejs') %>
 
-    <div id="btn-add-event-wrapper"> 
+    <div id="btn-add-event-wrapper">
       <button class="btn btn-primary" onclick="showForm()" id="btn-add-event" type="text">Add Event</button>
     </div>
   </div> <!-- schedule-content -->
@@ -73,13 +73,8 @@
 
 <script>
   (function hideForm() {
-<<<<<<< HEAD
-    $('#add-task').hide();
-    $('#btn-hide-form').hide();
-=======
     $('#form-add-event').hide();
-    $('#btn-hide-form').hide();    
->>>>>>> ad2ee16e4580a188ed123fd5c4bdd51ac1acd537
+    $('#btn-hide-form').hide();
   })();
 
   function showForm() {
@@ -89,132 +84,8 @@
   }
 
   function cancelForm() {
-<<<<<<< HEAD
-    $('#add-task').hide();
-    $('#btn-hide-form').hide();
-  }
-</script>
-
-
-<% tasks.forEach(task => { %>
-  <% if (task.tag === 'lunch') { %>
-    <h1 class = "schedule-h1">Lunch</h1>
-  <% } else if (task.tag === 'break') { %>
-    <h1 class = "schedule-h1">Break</h1>
-  <% } else { %>
-    <h1 class = "schedule-h1">Class</h1>
-  <% }; %>
-  <div class="task-container">
-    <div class="left-column">
-      <p><%= task.startTime %></p>
-      <p>-</p>
-      <p><%= task.endTime %></p>
-    </div>
-    <div class="right-column">
-      <p class="task-title"><%= task.title %></p>
-      <% if (task.notes) { %>
-      <p><%= task.notes %></p>
-      <% } %>
-      <% if (task.tag) { %>
-      <p><i class=""></i> <%= task.tag %></p>
-      <% } %>
-    </div>
-  </div>
-<% }) %>
-
-<!-- <h1>Class</h1>
-<div class="task-container" style="border-color:aquamarine">
-  <div class="left-column">
-    <p>10:00 AM</p>
-    <p>-</p>
-    <p>11:00 AM</p>
-  </div>
-  <div class="right-column">
-    <p class="task-title">Read Harry Potter</p>
-    <p>Chapters 3 & 4</p>
-    <p><i class="fa fa-book"></i> Literature</p>
-  </div>
-</div>
-
-<h1>Class</h1>
-<div class="task-container" style="border-color:aquamarine">
-  <div class="left-column">
-    <p>11:00 AM</p>
-    <p>-</p>
-    <p>12:00 PM</p>
-  </div>
-  <div class="right-column">
-    <p class="task-title">Build volcano</p>
-    <p>Supplies under kitchen sink</p>
-    <p><i class="fa fa-flask"></i> Science</p>
-  </div>
-</div>
-
-<h1>Lunch</h1>
-<div class="task-container" style="border-color:lightcoral;">
-  <div class="left-column">
-    <p>12:00 PM</p>
-    <p>-</p>
-    <p>1:00 PM</p>
-  </div>
-  <div class="right-column">
-    <p class="task-title">Lunch time</p>
-    <p>PB&J Sandwich</p>
-    <p><i class="fa fa-utensils"></i> Lunch</p>
-  </div>
-</div>
-
-<h1>Class</h1>
-<div class="task-container" style="border-color:aquamarine">
-  <div class="left-column">
-    <p>1:00 PM</p>
-    <p>-</p>
-    <p>2:00 PM</p>
-  </div>
-  <div class="right-column">
-    <p class="task-title">Algebra workbook</p>
-    <p>Complete pages 45 - 73</p>
-    <p><i class="fa fa-percent"></i> Math</p>
-  </div>
-</div>
-
-<h1>Break</h1>
-<div class="task-container" style="border-color:lightcoral;">
-  <div class="left-column">
-    <p>2:00 PM</p>
-    <p>-</p>
-    <p>2:15 PM</p>
-  </div>
-  <div class="right-column">
-    <p class="task-title">Go outside and play</p>
-    <p>Don't hurt yourself</p>
-    <p><i class="fa fa-walking"></i> Fun</p>
-  </div>
-</div>
-
-<h1>Class</h1>
-<div class="task-container" style="border-color:aquamarine">
-  <div class="left-column">
-    <p>2:15 PM</p>
-    <p>-</p>
-    <p>3:00 PM</p>
-  </div>
-  <div class="right-column">
-    <p class="task-title">Study for History quiz</p>
-    <p>Sections 5 & 6</p>
-    <p><i class="fa fa-monument"></i> History</p>
-  </div>
-</div> -->
-
-<%- include('partials/addTask.ejs') %>
-<!-- <div class = "addButtonSection"> -->
-
-<button class="btn btn-primary mx-auto" onclick="showForm()" id="btn-add-task" type="text">Add Task</button>
-
-=======
     $('#form-add-event').hide();
-    $('#btn-hide-form').hide();  
-    $('#btn-add-event').show();  
+    $('#btn-hide-form').hide();
+    $('#btn-add-event').show();
   }
 </script>
->>>>>>> ad2ee16e4580a188ed123fd5c4bdd51ac1acd537
