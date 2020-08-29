@@ -9,7 +9,7 @@ router.get('/login', (req, res) => {
   if (user) {
     res.redirect('/schedule');
   } else {
-    res.render('login');
+    res.render('login', { user: user });
   }
 });
 
