@@ -1,88 +1,42 @@
-<script>
-  $(document).ready(function(){
-    $("ul").on("click", "li", function(){
-    $(this).toggleClass("completed");
-    });
-
-
-    $("ul").on("click", "span", function(event){
-    $(this).parent().fadeOut(500,function(){
-    $(this).remove();
-    });
-    event.stopPropagation();
-    });
-
-    $("input[type='text']").keypress(function(event){
-    if(event.which === 13){
-
-    var todoText = $(this).val();
-    $(this).val("");
-
-    $("ul").append("<li><span><i class='fa fa-trash'></i></span> " + todoText + "</li>")
-    }
-    });
-
-    $(".fa-plus").click(function(){
-    $("input[type='text']").fadeToggle();
-    });
-  });
-</script>
-
-<<<<<<< HEAD
-<%- include('partials/nav.ejs')%>
-<<<<<<< HEAD
-   <div class = "toDoContainer">
-
-    <h1 class = "toDo-h1">Weekly To-Do</h1><i class="fa fa-plus"></i><input type="text" placeholder="Add New Activity">
+<div class="container">
+    <h1>Weekly To-Do <i class="fa fa-plus"></i></h1> <input type="text" placeholder="Add New Activity">
     <ul>
-        <li><span><i class="fa fa-minus"></i></span> Math Worksheet</li>
-        <li><span><i class="fa fa-minus"></i></span> Science Video</li>
-        <li><span><i class="fa fa-minus"></i></span> Arts and Crafts</li>
-        <li><span><i class="fa fa-minus"></i></span> Nature Walk</li>
-        <li><span><i class="fa fa-minus"></i></span> Listen to a Podcast</li>
+        <li><span><i class="fa fa-trash"></i></span> Math Worksheet</li>
+        <li><span><i class="fa fa-trash"></i></span> Science Video</li>
+        <li><span><i class="fa fa-trash"></i></span> Arts and Crafts</li>
+        <li><span><i class="fa fa-trash"></i></span> Nature Walk</li>
+        <li><span><i class="fa fa-trash"></i></span> Listen to a Podcast</li>
     </ul>
-  </div>
-=======
->>>>>>> 827806bf49fd0f078a332b0ba50f9aaa1871a818
-=======
-<%- include('partials/nav.ejs') %>
-
-<div class="todo-container">
-  <h1 class="todo">Weekly To-Do <i class="fa fa-plus"></i></h1> <input type="text" placeholder="Add New Activity">
-  <ul class="todo">
-      <li class="todo"><span class="todo"><i class="fa fa-minus"></i></span> Math Worksheet</li>
-      <li class="todo"><span class="todo"><i class="fa fa-minus"></i></span> Science Video</li>
-      <li class="todo"><span class="todo"><i class="fa fa-minus"></i></span> Arts and Crafts</li>
-      <li class="todo"><span class="todo"><i class="fa fa-minus"></i></span> Nature Walk</li>
-      <li class="todo"><span class="todo"><i class="fa fa-minus"></i></span> Listen to a Podcast</li>
-  </ul>
 </div>
->>>>>>> ad2ee16e4580a188ed123fd5c4bdd51ac1acd537
+<%# JS %>
+$(document).ready(function(){
 
-<!-- <div class="toDoContainer">
-  <h1>Weekly To-Do <i class="fa fa-plus"></i></h1>
-  <form id="add-todo" action="/toDo/api/todos" method="POST">
-      <input type="text" placeholder="Add New Activity">
-  </form>
-  <ul>
-      <% todos.forEach(todo => { %>
-      <li><span><i class="fa fa-trash"></i></span> <%= todo.note %></li>
-      <% }) %>
-<<<<<<< HEAD
-  </ul> -->
+$("ul").on("click", "li", function(){
+$(this).toggleClass("completed");
+});
 
 
-  <%# <h1 class = "toDo-h1" >Weekly To-Do <i class="fa fa-plus"></i></h1> <input type="text" placeholder="Add New Activity">
-  <ul>
-    <li><span><i class="fa fa-trash"></i></span> Math Worksheet</li>
-    <li><span><i class="fa fa-trash"></i></span> Science Video</li>
-    <li><span><i class="fa fa-trash"></i></span> Arts and Crafts</li>
-    <li><span><i class="fa fa-trash"></i></span> Nature Walk</li>
-    <li><span><i class="fa fa-trash"></i></span> Listen to a Podcast</li>
-  </ul>
-</div> %>
+$("ul").on("click", "span", function(event){
+$(this).parent().fadeOut(500,function(){
+$(this).remove();
+});
+event.stopPropagation();
+});
 
-=======
-  </ul>
-</div> -->
->>>>>>> ad2ee16e4580a188ed123fd5c4bdd51ac1acd537
+$("input[type='text']").keypress(function(event){
+if(event.which === 13){
+
+var todoText = $(this).val();
+$(this).val("");
+
+$("ul").append("<li><span><i class='fa fa-trash'></i></span> " + todoText + "</li>")
+}
+});
+
+$(".fa-plus").click(function(){
+$("input[type='text']").fadeToggle();
+});
+
+
+});
+
