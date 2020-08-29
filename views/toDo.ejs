@@ -1,6 +1,7 @@
-<div class="container">
-  <h1>Weekly To-Do <i class="fa fa-plus"></i></h1> <input type="text" placeholder="Add New Activity">
-  <ul>
+<div class="container todo-page">
+  <h1>Weekly To-Do <i class="fa fa-plus"></i></h1>
+  <input class="todo-input" type="text" placeholder="Add New Activity">
+  <ul class="todo-list">
     <li><span><i class="fa fa-trash"></i></span> Math Worksheet</li>
     <li><span><i class="fa fa-trash"></i></span> Science Video</li>
     <li><span><i class="fa fa-trash"></i></span> Arts and Crafts</li>
@@ -8,15 +9,16 @@
     <li><span><i class="fa fa-trash"></i></span> Listen to a Podcast</li>
   </ul>
 </div>
+
 <script>
   $(document).ready(function () {
 
-    $("ul").on("click", "li", function () {
+    $(".todo-list").on("click", "li", function () {
       $(this).toggleClass("completed");
     });
 
 
-    $("ul").on("click", "span", function (event) {
+    $(".todo-list").on("click", "span", function (event) {
       $(this).parent().fadeOut(500, function () {
         $(this).remove();
       });
@@ -29,12 +31,12 @@
         var todoText = $(this).val();
         $(this).val("");
 
-        $("ul").append("<li><span><i class='fa fa-trash'></i></span> " + todoText + "</li>")
+        $(".todo-list").append("<li><span><i class='fa fa-trash'></i></span> " + todoText + "</li>")
       }
     });
 
     $(".fa-plus").click(function () {
-      $("input[type='text']").fadeToggle();
+      $("input[type='text'].todo-input").fadeToggle();
     });
 
 

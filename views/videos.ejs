@@ -1,21 +1,17 @@
-<%- include('./partials/nav') %>
-
 <div id="videos-container">
   <div id="videos-content">
     <% videos.items.forEach((item) => { %>
-      <div class="video-container">
-        <div class="video-left-col">
-          <a href="https://www.youtube.com/watch?v=<%=item.id.videoId%>">
-            <img class="video-thumbnail" src="<%= item.snippet.thumbnails.medium.url %>">
-          </a>
-        </div>
-        <div class="video-right-col">
-          <p>Title: <%= item.snippet.title %></p>
-          <p>Description: <%= item.snippet.description %></p>
-        </div>
-      </div> <!-- video-container -->
+    <div class="video-container">
+      <div class="video-left-col">
+        <a href="https://www.youtube.com/watch?v=<%=item.id.videoId%>">
+          <img class="video-thumbnail" src="<%= item.snippet.thumbnails.medium.url %>">
+        </a>
+      </div>
+      <div class="video-right-col">
+        <p>Title: <%= item.snippet.title %></p>
+        <p>Description: <%= item.snippet.description %></p>
+      </div>
+    </div> <!-- video-container -->
     <% }); %>
   </div> <!-- videos-content -->
 </div> <!-- videos-container -->
-
-<%- include('partials/footer') %>

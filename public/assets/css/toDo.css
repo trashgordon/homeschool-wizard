@@ -3,13 +3,13 @@ body {
      background: linear-gradient(#000000, #457b9d);
 }
 
- ul {
+ ul.todo-list {
      list-style: none;
      margin: 0;
      padding: 0;
  }
 
- h1 {
+ div.todo-page > h1 {
      background: black;
      color: white;
      margin: 0;
@@ -26,7 +26,7 @@ body {
      color:#fff;
  }
 
- li {
+ ul.todo-list > li {
      background: #fff;
      height: 60px;
      line-height: 50px;
@@ -34,11 +34,11 @@ body {
      font-size: 1.25rem;
  }
 
- li:nth-child(2n) {
+ ul.todo-list > li:nth-child(2n) {
      background: #f7f7f7
  }
 
- span {
+ ul.todo-list > li > span {
      background: #457b9d;
      height: 60px;
      margin-right: 10px;
@@ -51,7 +51,7 @@ body {
      opacity: 3;
  }
 
- li:hover span {
+ ul.todo-list > li:hover span {
      width: 50px;
      opacity: 1.5;
  }
