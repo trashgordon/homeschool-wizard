@@ -1,8 +1,8 @@
-<<<<<<< HEAD:public/assets/css/register.css
+#login-container {
+    margin-top: 20vh;
+}
+
 .register-h1{
-=======
-.register-h1 {
->>>>>>> ad2ee16e4580a188ed123fd5c4bdd51ac1acd537:public/assets/css/auth.css
     color: #fff;
     font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 2rem;
@@ -22,21 +22,16 @@
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
-<<<<<<< HEAD:public/assets/css/register.css
-
- }
-
-=======
-}
- 
-#login-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: space-between;
 }
 
-#login-container h1 {
-    margin-top: 15vh;
+@media print {
+#ghostery-purple-box {
+    display: none !important
 }
->>>>>>> ad2ee16e4580a188ed123fd5c4bdd51ac1acd537:public/assets/css/auth.css
+}
+
+@media print {
+#ghostery-purple-box {
+    display: none !important
+}
+}
